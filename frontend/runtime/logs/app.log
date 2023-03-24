@@ -27846,3 +27846,1362 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1679419377.2371
     'REQUEST_TIME' => 1679419377
 ]
+2023-03-22 18:21:21 [::1][-][15frleb30el40fo4mh7e53h1c9][error][Error] Error: Class 'yii\mongodb\ActiveRecord' not found in C:\xampp\htdocs\yii2PFMSMobile\common\models\User.php:26
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\BaseYii.php(293): include()
+#1 [internal function]: yii\BaseYii::autoload('common\\models\\U...')
+#2 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\User.php(698): spl_autoload_call('common\\models\\U...')
+#3 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\User.php(199): yii\web\User->renewAuthStatus()
+#4 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\User.php(367): yii\web\User->getIdentity()
+#5 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Component.php(139): yii\web\User->getIsGuest()
+#6 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2-debug\src\panels\UserPanel.php(83): yii\base\Component->__get('isGuest')
+#7 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#8 [internal function]: yii\base\BaseObject->__construct(Array)
+#9 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\di\Container.php(419): ReflectionClass->newInstanceArgs(Array)
+#10 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\di\Container.php(170): yii\di\Container->build('yii\\debug\\panel...', Array, Array)
+#11 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\BaseYii.php(365): yii\di\Container->get('yii\\debug\\panel...', Array, Array)
+#12 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2-debug\src\Module.php(253): yii\BaseYii::createObject(Array)
+#13 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2-debug\src\Module.php(225): yii\debug\Module->initPanels()
+#14 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\debug\Module->init()
+#15 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php(161): yii\base\BaseObject->__construct(Array)
+#16 [internal function]: yii\base\Module->__construct('debug', Object(yii\web\Application), Array)
+#17 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\di\Container.php(411): ReflectionClass->newInstanceArgs(Array)
+#18 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\di\Container.php(170): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#19 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\BaseYii.php(365): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#20 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php(445): yii\BaseYii::createObject(Array, Array)
+#21 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(313): yii\base\Module->getModule('debug')
+#22 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(69): yii\base\Application->bootstrap()
+#23 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(271): yii\web\Application->bootstrap()
+#24 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\BaseObject.php(109): yii\base\Application->init()
+#25 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(204): yii\base\BaseObject->__construct(Array)
+#26 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->__construct(Array)
+#27 {main}
+2023-03-22 18:21:20 [::1][-][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '65314'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679505680.7229
+    'REQUEST_TIME' => 1679505680
+]
+2023-03-22 18:31:11 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:31:11 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fcalendar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52462'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506271.5594
+    'REQUEST_TIME' => 1679506271
+]
+2023-03-22 18:31:16 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:31:16 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52542'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506276.7606
+    'REQUEST_TIME' => 1679506276
+]
+2023-03-22 18:31:36 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:31:36 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52543'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506296.5434
+    'REQUEST_TIME' => 1679506296
+]
+2023-03-22 18:31:38 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:31:38 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52546'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506298.128
+    'REQUEST_TIME' => 1679506298
+]
+2023-03-22 18:31:40 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:31:40 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fcalendar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52549'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506300.5209
+    'REQUEST_TIME' => 1679506300
+]
+2023-03-22 18:32:08 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:32:08 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fcalendar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52551'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506328.1611
+    'REQUEST_TIME' => 1679506328
+]
+2023-03-22 18:32:09 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:32:09 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52551'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506329.4087
+    'REQUEST_TIME' => 1679506329
+]
+2023-03-22 18:32:09 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:32:09 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52552'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506329.8716
+    'REQUEST_TIME' => 1679506329
+]
+2023-03-22 18:35:53 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:35:53 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52573'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506553.7282
+    'REQUEST_TIME' => 1679506553
+]
+2023-03-22 18:35:54 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:35:54 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52578'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506554.3991
+    'REQUEST_TIME' => 1679506554
+]
+2023-03-22 18:35:54 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:35:54 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52578'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506554.567
+    'REQUEST_TIME' => 1679506554
+]
+2023-03-22 18:35:54 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:35:54 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52578'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506554.696
+    'REQUEST_TIME' => 1679506554
+]
+2023-03-22 18:35:54 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:35:54 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52578'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506554.8562
+    'REQUEST_TIME' => 1679506554
+]
+2023-03-22 18:35:55 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/chart/bar". in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/chart/bar', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2023-03-22 18:35:55 [::1][6416e2ae31360000c80024b4][15frleb30el40fo4mh7e53h1c9][info][application] $_GET = [
+    'r' => 'site/chart/bar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"6416e2ae31360000c80024b4\"},\"uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5\",2592000]\";}'
+    'advanced-frontend' => '15frleb30el40fo4mh7e53h1c9'
+    '_csrf-frontend' => '8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectId#1
+    (
+        [oid] => '6416e2ae31360000c80024b4'
+    )
+    '__authKey' => 'uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5'
+    '__captcha/site/captcha' => 'nuqdtq'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th-TH,th;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=c555db9cd4bc132368f1085f7c8111cc7ed58d7cea01ace919418d88d2dbf366a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%226416e2ae31360000c80024b4%22%7D%2C%22uwQsR786ILLWVHfZoWnLlp8bUIxmg6p5%22%2C2592000%5D%22%3B%7D; advanced-frontend=15frleb30el40fo4mh7e53h1c9; _csrf-frontend=8c434eb7c47035d7500885bb7b3b345cbbd11923e446454504d7cf123c347c79a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22JdLBOsrWXL-9uOnLEo91Gc8-PcDkspiU%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\composer;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\ACER\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\ACER\\anaconda3;C:\\Users\\ACER\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ACER\\anaconda3\\Library\\usr\\bin;C:\\Users\\ACER\\anaconda3\\Library\\bin;C:\\Users\\ACER\\anaconda3\\Scripts;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Users\\ACER\\AppData\\Local\\Microsoft\\WindowsApps;C:\\spark\\bin;C:\\Program Files\\Java\\jdk-11.0.16.1\\bin;C:\\Users\\ACER\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\mongoDB\\mongosh\\bin;C:\\mongoDB\\mongodbTools\\bin;C:\\Program Files\\MongoDB\\Server\\5.0\\bin;C:\\Users\\ACER\\.dotnet\\tools;C:\\Users\\ACER\\AppData\\Roaming\\npm;C:\\Users\\ACER\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\ACER\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/7.4.15'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52578'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fchart%2Fbar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fchart%2Fbar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679506554.9989
+    'REQUEST_TIME' => 1679506554
+]

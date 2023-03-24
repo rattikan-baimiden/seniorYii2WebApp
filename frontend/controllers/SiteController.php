@@ -79,6 +79,16 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionBar()
+    {
+        return $this->render('bar');
+    }
+
+    public function actionLine()
+    {
+        return $this->render('line');
+    }
+
     /**
      * Logs in a user.
      *

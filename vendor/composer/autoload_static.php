@@ -21,14 +21,13 @@ class ComposerStaticInit93675484d08475eab190b6e4d8d173c1
         'y' => 
         array (
             'yii\\swiftmailer\\' => 16,
-            'yii\\jui\\' => 8,
+            'yii\\mongodb\\' => 12,
             'yii\\gii\\' => 8,
             'yii\\debug\\' => 10,
             'yii\\composer\\' => 13,
             'yii\\bootstrap\\' => 14,
             'yii\\bootstrap4\\' => 15,
             'yii\\' => 4,
-            'yii2fullcalendar\\' => 17,
         ),
         'p' => 
         array (
@@ -75,9 +74,9 @@ class ComposerStaticInit93675484d08475eab190b6e4d8d173c1
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'yii\\jui\\' => 
+        'yii\\mongodb\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-jui',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-mongodb/src',
         ),
         'yii\\gii\\' => 
         array (
@@ -102,10 +101,6 @@ class ComposerStaticInit93675484d08475eab190b6e4d8d173c1
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
-        ),
-        'yii2fullcalendar\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/philippfrenzel/yii2fullcalendar',
         ),
         'phpDocumentor\\Reflection\\' => 
         array (
