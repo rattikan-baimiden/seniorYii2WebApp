@@ -29205,3 +29205,377 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1679506554.9989
     'REQUEST_TIME' => 1679506554
 ]
+2023-03-25 17:17:55 [::1][-][4m68aijsopup0pgk273oh7kdvh][error][Error] Error: Class 'Html' not found in C:\xampp\htdocs\yii2PFMSMobile\frontend\views\site\index.php:13
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\View.php(347): require()
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#2 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#3 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Controller.php(407): yii\base\View->render('index', Array, Object(frontend\controllers\SiteController))
+#4 C:\xampp\htdocs\yii2PFMSMobile\frontend\controllers\SiteController.php(79): yii\base\Controller->render('index')
+#5 [internal function]: frontend\controllers\SiteController->actionIndex()
+#6 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php(552): yii\base\Controller->runAction('', Array)
+#9 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#10 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2023-03-25 17:17:55 [::1][-][4m68aijsopup0pgk273oh7kdvh][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => '4m68aijsopup0pgk273oh7kdvh'
+    '_csrf-frontend' => '1db476a84695d4633bff8c6fb92b391dee207c5aa932a350f66a05c3684a9840a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"UtS2pocDjj3JcHfSXI5pmrx-bp1khHpF\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'keiedas'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?1'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Android\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 8.0.0; SM-G955U Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Mobile Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,th-TH;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=4m68aijsopup0pgk273oh7kdvh; _csrf-frontend=1db476a84695d4633bff8c6fb92b391dee207c5aa932a350f66a05c3684a9840a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22UtS2pocDjj3JcHfSXI5pmrx-bp1khHpF%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Eclipse Adoptium\\jdk-11.0.16.101-hotspot\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tokyo\\anaconda3;C:\\Users\\tokyo\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\tokyo\\anaconda3\\Library\\usr\\bin;C:\\Users\\tokyo\\anaconda3\\Library\\bin;C:\\Users\\tokyo\\anaconda3\\Scripts;C:\\Users\\tokyo\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tokyo\\.dotnet\\tools;C:\\Users\\tokyo\\AppData\\Roaming\\npm;C:\\Users\\tokyo\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\tokyo\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\tokyo\\AppData\\Local\\Programs\\Python\\Python39;C:\\Users\\tokyo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.30 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '60439'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679761075.6616
+    'REQUEST_TIME' => 1679761075
+]
+2023-03-26 16:05:23 [::1][-][4m68aijsopup0pgk273oh7kdvh][error][Error] Error: Class 'MongoDB\Driver\Query' not found in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2-mongodb\src\Command.php:282
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2-mongodb\src\Command.php(619): yii\mongodb\Command->query('users', Array, Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2-mongodb\src\Collection.php(233): yii\mongodb\Command->find('users', Array, Array, Array)
+#2 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2-mongodb\src\Query.php(199): yii\mongodb\Collection->find(Array, Array, Array)
+#3 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2-mongodb\src\Query.php(361): yii\mongodb\Query->buildCursor(NULL)
+#4 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2-mongodb\src\ActiveQuery.php(149): yii\mongodb\Query->one(NULL)
+#5 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\db\BaseActiveRecord.php(110): yii\mongodb\ActiveQuery->one()
+#6 C:\xampp\htdocs\yii2PFMSMobile\common\models\User.php(114): yii\db\BaseActiveRecord::findOne(Array)
+#7 C:\xampp\htdocs\yii2PFMSMobile\common\models\LoginForm.php(74): common\models\User::findByUsername('anchisa')
+#8 C:\xampp\htdocs\yii2PFMSMobile\common\models\LoginForm.php(45): common\models\LoginForm->getUser()
+#9 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\validators\InlineValidator.php(77): common\models\LoginForm->validatePassword('password', NULL, Object(yii\validators\InlineValidator), '180645')
+#10 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\validators\Validator.php(260): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), 'password')
+#11 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Model.php(368): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), Array)
+#12 C:\xampp\htdocs\yii2PFMSMobile\common\models\LoginForm.php(59): yii\base\Model->validate()
+#13 C:\xampp\htdocs\yii2PFMSMobile\frontend\controllers\SiteController.php(104): common\models\LoginForm->login()
+#14 [internal function]: frontend\controllers\SiteController->actionLogin()
+#15 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php(552): yii\base\Controller->runAction('login', Array)
+#18 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#19 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#21 {main}
+2023-03-26 16:05:23 [::1][-][4m68aijsopup0pgk273oh7kdvh][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'VDm3MUHwkwHJ-0PmjYHqqB2c9zEyyQqL-XqV-6jIoOkBTeQDMZ_wRaORcKzuyYz7RdXCQV-7cqabCqSQwIDQrw=='
+    'LoginForm' => [
+        'username' => 'anchisa'
+        'password' => '180645'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => '4m68aijsopup0pgk273oh7kdvh'
+    '_csrf-frontend' => '1db476a84695d4633bff8c6fb92b391dee207c5aa932a350f66a05c3684a9840a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"UtS2pocDjj3JcHfSXI5pmrx-bp1khHpF\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'keiedas'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '240'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,th-TH;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=4m68aijsopup0pgk273oh7kdvh; _csrf-frontend=1db476a84695d4633bff8c6fb92b391dee207c5aa932a350f66a05c3684a9840a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22UtS2pocDjj3JcHfSXI5pmrx-bp1khHpF%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Eclipse Adoptium\\jdk-11.0.16.101-hotspot\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tokyo\\anaconda3;C:\\Users\\tokyo\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\tokyo\\anaconda3\\Library\\usr\\bin;C:\\Users\\tokyo\\anaconda3\\Library\\bin;C:\\Users\\tokyo\\anaconda3\\Scripts;C:\\Users\\tokyo\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tokyo\\.dotnet\\tools;C:\\Users\\tokyo\\AppData\\Roaming\\npm;C:\\Users\\tokyo\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\tokyo\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\tokyo\\AppData\\Local\\Programs\\Python\\Python39;C:\\Users\\tokyo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.30 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '52519'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679839523.2627
+    'REQUEST_TIME' => 1679839523
+]
+2023-03-26 17:15:25 [::1][-][4m68aijsopup0pgk273oh7kdvh][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Setting unknown property: frontend\FullcalendarWidget::option in C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Component.php:209
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\BaseYii.php(558): yii\base\Component->__set('option', Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\BaseObject.php(107): yii\BaseYii::configure(Object(frontend\FullcalendarWidget), Array)
+#2 [internal function]: yii\base\BaseObject->__construct(Array)
+#3 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\di\Container.php(419): ReflectionClass->newInstanceArgs(Array)
+#4 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\di\Container.php(170): yii\di\Container->build('frontend\\Fullca...', Array, Array)
+#5 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\BaseYii.php(365): yii\di\Container->get('frontend\\Fullca...', Array, Array)
+#6 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Widget.php(143): yii\BaseYii::createObject(Array)
+#7 C:\xampp\htdocs\yii2PFMSMobile\frontend\views\site\calendar.php(16): yii\base\Widget::widget(Array)
+#8 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\View.php(347): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#10 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#11 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Controller.php(407): yii\base\View->render('calendar', Array, Object(frontend\controllers\SiteController))
+#12 C:\xampp\htdocs\yii2PFMSMobile\frontend\controllers\SiteController.php(167): yii\base\Controller->render('calendar')
+#13 [internal function]: frontend\controllers\SiteController->actionCalendar()
+#14 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php(552): yii\base\Controller->runAction('calendar', Array)
+#17 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/calendar', Array)
+#18 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#20 {main}
+2023-03-26 17:15:25 [::1][-][4m68aijsopup0pgk273oh7kdvh][info][application] $_GET = [
+    'r' => 'site/calendar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => '4m68aijsopup0pgk273oh7kdvh'
+    '_csrf-frontend' => '1db476a84695d4633bff8c6fb92b391dee207c5aa932a350f66a05c3684a9840a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"UtS2pocDjj3JcHfSXI5pmrx-bp1khHpF\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'keiedas'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Foverview'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,th-TH;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=4m68aijsopup0pgk273oh7kdvh; _csrf-frontend=1db476a84695d4633bff8c6fb92b391dee207c5aa932a350f66a05c3684a9840a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22UtS2pocDjj3JcHfSXI5pmrx-bp1khHpF%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Eclipse Adoptium\\jdk-11.0.16.101-hotspot\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tokyo\\anaconda3;C:\\Users\\tokyo\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\tokyo\\anaconda3\\Library\\usr\\bin;C:\\Users\\tokyo\\anaconda3\\Library\\bin;C:\\Users\\tokyo\\anaconda3\\Scripts;C:\\Users\\tokyo\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tokyo\\.dotnet\\tools;C:\\Users\\tokyo\\AppData\\Roaming\\npm;C:\\Users\\tokyo\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\tokyo\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\tokyo\\AppData\\Local\\Programs\\Python\\Python39;C:\\Users\\tokyo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.30 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '58384'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fcalendar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fcalendar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679843725.112
+    'REQUEST_TIME' => 1679843725
+]
+2023-03-26 17:47:36 [::1][-][4m68aijsopup0pgk273oh7kdvh][error][yii\base\ErrorException:2] yii\base\ErrorException: Use of undefined constant calendar - assumed 'calendar' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\yii2PFMSMobile\frontend\views\site\calendar.php:25
+Stack trace:
+#0 C:\xampp\htdocs\yii2PFMSMobile\frontend\views\site\calendar.php(25): yii\base\ErrorHandler->handleError(2, 'Use of undefine...', 'C:\\xampp\\htdocs...', 25, Array)
+#1 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\View.php(347): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(frontend\controllers\SiteController))
+#4 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Controller.php(407): yii\base\View->render('calendar', Array, Object(frontend\controllers\SiteController))
+#5 C:\xampp\htdocs\yii2PFMSMobile\frontend\controllers\SiteController.php(167): yii\base\Controller->render('calendar')
+#6 [internal function]: frontend\controllers\SiteController->actionCalendar()
+#7 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Module.php(552): yii\base\Controller->runAction('calendar', Array)
+#10 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/calendar', Array)
+#11 C:\xampp\htdocs\yii2PFMSMobile\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\yii2PFMSMobile\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2023-03-26 17:47:35 [::1][-][4m68aijsopup0pgk273oh7kdvh][info][application] $_GET = [
+    'r' => 'site/calendar'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => '4m68aijsopup0pgk273oh7kdvh'
+    '_csrf-frontend' => '1db476a84695d4633bff8c6fb92b391dee207c5aa932a350f66a05c3684a9840a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"UtS2pocDjj3JcHfSXI5pmrx-bp1khHpF\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'keiedas'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/yii2PFMSMobile/frontend/web/index.php?r=site%2Fdayview'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,th-TH;q=0.8,th;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=4m68aijsopup0pgk273oh7kdvh; _csrf-frontend=1db476a84695d4633bff8c6fb92b391dee207c5aa932a350f66a05c3684a9840a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22UtS2pocDjj3JcHfSXI5pmrx-bp1khHpF%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Eclipse Adoptium\\jdk-11.0.16.101-hotspot\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tokyo\\anaconda3;C:\\Users\\tokyo\\anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\tokyo\\anaconda3\\Library\\usr\\bin;C:\\Users\\tokyo\\anaconda3\\Library\\bin;C:\\Users\\tokyo\\anaconda3\\Scripts;C:\\Users\\tokyo\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tokyo\\.dotnet\\tools;C:\\Users\\tokyo\\AppData\\Roaming\\npm;C:\\Users\\tokyo\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\tokyo\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\tokyo\\AppData\\Local\\Programs\\Python\\Python39;C:\\Users\\tokyo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.30 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/7.4.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/yii2PFMSMobile/frontend/web/index.php'
+    'REMOTE_PORT' => '50795'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fcalendar'
+    'REQUEST_URI' => '/yii2PFMSMobile/frontend/web/index.php?r=site%2Fcalendar'
+    'SCRIPT_NAME' => '/yii2PFMSMobile/frontend/web/index.php'
+    'PHP_SELF' => '/yii2PFMSMobile/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1679845655.9236
+    'REQUEST_TIME' => 1679845655
+]

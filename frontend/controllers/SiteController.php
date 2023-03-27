@@ -168,6 +168,27 @@ class SiteController extends Controller
     }
 
     /**
+     * Displays overview page.
+     *
+     * @return mixed
+     */
+    public function actionOverview()
+    {
+        return $this->render('overview');
+    }
+
+    /**
+     * Displays dayview page.
+     *
+     * @return mixed
+     */
+    public function actionDayview()
+    {
+        return $this->render('dayview');
+    }
+
+
+    /**
      * Signs user up.
      *
      * @return mixed
