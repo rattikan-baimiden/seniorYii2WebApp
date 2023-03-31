@@ -89,6 +89,21 @@ class SiteController extends Controller
         return $this->render('line');
     }
 
+    public function actionPie()
+    {
+        return $this->render('pie');
+    }
+
+    public function actionCalculator()
+    {
+        return $this->render('calculator');
+    }
+
+    public function actionLimit()
+    {
+        return $this->render('limit');
+    }
+
     /**
      * Logs in a user.
      *
@@ -182,11 +197,15 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionDayview()
+    public function actionIncome()
     {
-        return $this->render('dayview');
+        return $this->render('income');
     }
 
+    public function actionExpense()
+    {
+        return $this->render('expense');
+    }
 
     /**
      * Signs user up.

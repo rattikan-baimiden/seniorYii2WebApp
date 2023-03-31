@@ -4,7 +4,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Chart';
+$this->title = 'Pie';
 ?>
 
 <div class="site-index">
@@ -17,9 +17,9 @@ $this->title = 'Chart';
             <?= Html::a('Analyze', ['/site/bar'], ['class' => 'btn btn-primary']); ?>
         </div>
         <div style="margin-top: 15px; margin-bottom: 40px;">
-            <?= Html::a('Total of each', ['/site/bar'], ['class' => 'btn btn-info']); ?>
+            <?= Html::a('Total of each', ['/site/bar'], ['class' => 'btn btn-light']); ?>
             <?= Html::a('Saving', ['/site/line'], ['class' => 'btn btn-light']); ?>
-            <?= Html::a('Pie', ['/site/pie'], ['class' => 'btn btn-light']); ?>
+            <?= Html::a('Pie', ['/site/pie'], ['class' => 'btn btn-info']); ?>
             <?= Html::a('Calculator', ['/site/calculator'], ['class' => 'btn btn-light']); ?>
         </div>
     </center>
@@ -36,12 +36,12 @@ $this->title = 'Chart';
     const ctx = document.getElementById('myChart');
 
     new Chart(ctx, {
-        type: 'bar',
+        type: 'pie',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Saving', 'Expense'],
             datasets: [{
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [20, 80],
                 borderWidth: 1
             }]
         },
