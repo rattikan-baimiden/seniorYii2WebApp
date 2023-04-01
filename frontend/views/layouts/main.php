@@ -19,6 +19,19 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -37,15 +50,20 @@ AppAsset::register($this);
             ],
         ]);
         $menuItems = [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            ['label' => 'Overview', 'url' => ['/site/overview']]
+            $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']]
         ];
         if (Yii::$app->user->isGuest) {
             $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
             $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
         } else {
+            $menuItems[] = ['label' => 'About', 'url' => ['/site/about']];
+            $menuItems[] = ['label' => 'Contact', 'url' => ['/site/contact']];
+            $menuItems[] = ['label' => 'Expenses', 'url' => ['/expenses/index']];
+            $menuItems[] = ['label' => 'Incomes', 'url' => ['/incomes/index']];
+            $menuItems[] = ['label' => 'Types', 'url' => ['/types/index']];
+            $menuItems[] = ['label' => 'Savings', 'url' => ['/savings/index']];
+            $menuItems[] = ['label' => 'Limit', 'url' => ['/limit/index']];
+            $menuItems[] = ['label' => 'Overview', 'url' => ['/site/overview']];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
                 . Html::submitButton(

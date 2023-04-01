@@ -1,8 +1,8 @@
 <?php
 /**
- * @link https://www.yiiframework.com/
+ * @link http://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
- * @license https://www.yiiframework.com/license/
+ * @license http://www.yiiframework.com/license/
  */
 
 namespace yii\mongodb\file;
@@ -40,7 +40,6 @@ class Cursor extends \IteratorIterator implements \Countable
      * This method is required by the interface [[\Iterator]].
      * @return mixed current row
      */
-    #[\ReturnTypeWillChange]
     public function current()
     {
         $value = parent::current();
@@ -55,7 +54,6 @@ class Cursor extends \IteratorIterator implements \Countable
      * This method is required by the interface [[\Countable]].
      * @return int elements count.
      */
-    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->cursor);

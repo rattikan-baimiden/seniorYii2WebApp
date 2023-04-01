@@ -1,8 +1,8 @@
 <?php
 /**
- * @link https://www.yiiframework.com/
+ * @link http://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
- * @license https://www.yiiframework.com/license/
+ * @license http://www.yiiframework.com/license/
  */
 
 namespace yii\debug;
@@ -116,8 +116,6 @@ class LogTarget extends Target
             if (isset($data[$id])) {
                 $panel->tag = $tag;
                 $panel->load(unserialize($data[$id]));
-            } else {
-                unset($this->module->panels[$id]);
             }
             if (isset($exceptions[$id])) {
                 $panel->setError($exceptions[$id]);
@@ -245,12 +243,12 @@ class LogTarget extends Target
         $response = Yii::$app->getResponse();
         $summary = [
             'tag' => $this->tag,
-            'url' => $request instanceof yii\console\Request ? "php yii " . implode(' ', $request->getParams()): $request->getAbsoluteUrl(),
-            'ajax' => $request instanceof yii\console\Request ? 0 : (int) $request->getIsAjax(),
-            'method' => $request instanceof yii\console\Request ? 'COMMAND' : $request->getMethod(),
-            'ip' => $request instanceof yii\console\Request ? exec('whoami') : $request->getUserIP(),
+            'url' => $request->getAbsoluteUrl(),
+            'ajax' => (int) $request->getIsAjax(),
+            'method' => $request->getMethod(),
+            'ip' => $request->getUserIP(),
             'time' => $_SERVER['REQUEST_TIME_FLOAT'],
-            'statusCode' => $response instanceof yii\console\Response ? $response->exitStatus : $response->statusCode,
+            'statusCode' => $response->statusCode,
             'sqlCount' => $this->getSqlTotalCount(),
         ];
 

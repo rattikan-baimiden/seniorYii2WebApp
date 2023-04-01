@@ -13,7 +13,7 @@ use yii\helpers\Html;
     <p>
         Total processing time: <b><?= $time ?></b>; Peak memory: <b><?= $memory ?></b>.
         <?= Html::a('Show Profiling Timeline', [
-            '/' . $panel->module->getUniqueId() . '/default/view',
+            '/' . $panel->module->id . '/default/view',
             'panel' => 'timeline',
             'tag' => $panel->tag,
         ]) ?>

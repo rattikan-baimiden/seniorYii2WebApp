@@ -35,7 +35,7 @@ class User extends \yii\mongodb\ActiveRecord implements IdentityInterface
      */
     public static function CollectionName()
     {
-        return ['yii2','users'];
+        return ['yii2PFMS','user'];
     }
 
     public function attributes()

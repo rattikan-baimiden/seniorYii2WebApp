@@ -1,8 +1,8 @@
 <?php
 /**
- * @link https://www.yiiframework.com/
+ * @link http://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
- * @license https://www.yiiframework.com/license/
+ * @license http://www.yiiframework.com/license/
  */
 
 namespace yii\mongodb;
@@ -10,10 +10,10 @@ namespace yii\mongodb;
 use MongoDB\BSON\ObjectID;
 use MongoDB\Driver\BulkWrite;
 use MongoDB\Driver\Exception\RuntimeException;
-use MongoDB\Driver\WriteResult;
 use MongoDB\Driver\ReadConcern;
-use MongoDB\Driver\WriteConcern;
 use MongoDB\Driver\ReadPreference;
+use MongoDB\Driver\WriteConcern;
+use MongoDB\Driver\WriteResult;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\base\BaseObject;
@@ -72,104 +72,108 @@ class Command extends BaseObject
      * @var array command document contents.
      */
     public $document = [];
+
     /**
-     * @var array default options for `executeCommand` method of MongoDB\Driver\Manager.
+     * @var ReadPreference|int|string|null command read preference.
      */
-    public $globalExecOptions = [];
+    private $_readPreference;
+    /**
+     * @var WriteConcern|int|string|null write concern to be used by this command.
+     */
+    private $_writeConcern;
+    /**
+     * @var ReadConcern|string read concern to be used by this command
+     */
+    private $_readConcern;
 
 
     /**
-     * prepares execOptions for some purposes
-     * @param array|object|null $execOptions {@see prepareManagerOptions()}
+     * Returns read preference for this command.
+     * @return ReadPreference read preference.
      */
-    private function prepareExecCommandOptions(&$execOptions)
+    public function getReadPreference()
     {
-        if (empty($execOptions)) {
-            $execOptions = array_merge($this->globalExecOptions['command'],$this->globalExecOptions['share']);
-        }
-        self::prepareManagerOptions($execOptions);
-    }
-
-    /**
-     * prepares execOptions for some purposes
-     * @param array|object|null $execOptions {@see prepareManagerOptions()}
-     */
-    private function prepareExecBulkWriteOptions(&$execOptions)
-    {
-        if (empty($execOptions)) {
-            $execOptions = array_merge($this->globalExecOptions['bulkWrite'],$this->globalExecOptions['share']);
-        }
-        self::prepareManagerOptions($execOptions);
-    }
-
-    /**
-     * prepares execOptions for some purposes
-     * @param array|object|null $execOptions {@see prepareManagerOptions()}
-     */
-    private function prepareExecQueryOptions(&$execOptions)
-    {
-        if (empty($execOptions)) {
-            $execOptions = array_merge($this->globalExecOptions['query'],$this->globalExecOptions['share']);
-        }
-        self::prepareManagerOptions($execOptions);
-    }
-
-    /**
-     * preapare Concern and Preference options for easy use
-     * @param array|object $options by reference
-     * convert string option to object
-     * ['readConcern' => 'snapshot'] > ['readConcern' => new \MongoDB\Driver\ReadConcern('snapshot')]
-     * ['writeConcern' => 'majority'] > ['writeConcern' => new \MongoDB\Driver\WriteConcern('majority')]
-     * ['writeConcern' => ['majority',true]] > ['writeConcern' => new \MongoDB\Driver\WriteConcern('majority',true)]
-     * ['readPreference' => 'snapshot'] > ['readPreference' => new \MongoDB\Driver\ReadPreference('primary')]
-     * {@see https://www.php.net/manual/en/mongodb-driver-manager.executecommand.php#refsect1-mongodb-driver-manager.executecommand-parameters}
-     * {@see https://www.php.net/manual/en/mongodb-driver-manager.executebulkwrite.php#refsect1-mongodb-driver-manager.executebulkwrite-parameters}
-     * {@see https://www.php.net/manual/en/mongodb-driver-server.executequery.php#refsect1-mongodb-driver-server.executequery-parameters}
-     */
-    public static function prepareManagerOptions(&$options)
-    {
-        //Convert readConcern option
-        if (array_key_exists('readConcern', $options) && is_string($options['readConcern'])) {
-            $options['readConcern'] = new ReadConcern($options['readConcern']);
-        }
-
-        //Convert writeConcern option
-        if (array_key_exists('writeConcern', $options)) {
-            if (is_string($options['writeConcern']) || is_int($options['writeConcern'])) {
-                $options['writeConcern'] = new WriteConcern($options['writeConcern']);
-            } elseif (is_array($options['writeConcern'])) {
-                $options['writeConcern'] = (new \ReflectionClass('\MongoDB\Driver\WriteConcern'))->newInstanceArgs($options['writeConcern']);   
+        if (!is_object($this->_readPreference)) {
+            if ($this->_readPreference === null) {
+                $this->_readPreference = $this->db->manager->getReadPreference();
+            } elseif (is_scalar($this->_readPreference)) {
+                $this->_readPreference = new ReadPreference($this->_readPreference);
             }
         }
+        return $this->_readPreference;
+    }
 
-        //Convert readPreference option
-        if (array_key_exists('readPreference', $options)) {
-            if (is_string($options['readPreference'])) {
-                $options['readPreference'] = new ReadPreference($options['readPreference']);
-            } elseif (is_array($options['readPreference'])) {
-                $options['readPreference'] = (new \ReflectionClass('\MongoDB\Driver\ReadPreference'))->newInstanceArgs($options['readPreference']);
+    /**
+     * Sets read preference for this command.
+     * @param ReadPreference|int|string|null $readPreference read reference, it can be specified as
+     * instance of [[ReadPreference]] or scalar mode value, for example: `ReadPreference::RP_PRIMARY`.
+     * @return $this self reference.
+     */
+    public function setReadPreference($readPreference)
+    {
+        $this->_readPreference = $readPreference;
+        return $this;
+    }
+
+    /**
+     * Returns write concern for this command.
+     * @return WriteConcern|null write concern to be used in this command.
+     */
+    public function getWriteConcern()
+    {
+        if ($this->_writeConcern !== null) {
+            if (is_scalar($this->_writeConcern)) {
+                $this->_writeConcern = new WriteConcern($this->_writeConcern);
             }
         }
- 
-        //Convert session option
-        if (array_key_exists('session', $options) && $options['session'] instanceof ClientSession) {
-            $options['session'] = $options['session']->mongoSession;
+        return $this->_writeConcern;
+    }
+
+    /**
+     * Sets write concern for this command.
+     * @param WriteConcern|int|string|null $writeConcern write concern, it can be an instance of [[WriteConcern]]
+     * or its scalar mode value, for example: `majority`.
+     * @return $this self reference
+     */
+    public function setWriteConcern($writeConcern)
+    {
+        $this->_writeConcern = $writeConcern;
+        return $this;
+    }
+
+    /**
+     * Retuns read concern for this command.
+     * @return ReadConcern|string read concern to be used in this command.
+     */
+    public function getReadConcern()
+    {
+        if ($this->_readConcern !== null) {
+            if (is_scalar($this->_readConcern)) {
+                $this->_readConcern = new ReadConcern($this->_readConcern);
+            }
         }
-   }
+        return $this->_readConcern;
+    }
+
+    /**
+     * Sets read concern for this command.
+     * @param ReadConcern|string $readConcern read concern, it can be an instance of [[ReadConcern]] or
+     * scalar level value, for example: 'local'.
+     * @return $this self reference
+     */
+    public function setReadConcern($readConcern)
+    {
+        $this->_readConcern = $readConcern;
+        return $this;
+    }
 
     /**
      * Executes this command.
-     * @param array $execOptions (@see prepareExecCommandOptions())
-     * Note: "readConcern" and "writeConcern" options will not default to corresponding values from the MongoDB
-     * Connection URI nor will the MongoDB server version be taken into account
-     * @see https://www.php.net/manual/en/mongodb-driver-server.executebulkwrite.php#refsect1-mongodb-driver-server.executebulkwrite-parameters
      * @return \MongoDB\Driver\Cursor result cursor.
      * @throws Exception on failure.
      */
-    public function execute($execOptions = [])
+    public function execute()
     {
-        $this->prepareExecCommandOptions($execOptions);
-
         $databaseName = $this->databaseName === null ? $this->db->defaultDatabaseName : $this->databaseName;
 
         $token = $this->log([$databaseName, 'command'], $this->document, __METHOD__);
@@ -179,7 +183,7 @@ class Command extends BaseObject
 
             $this->db->open();
             $mongoCommand = new \MongoDB\Driver\Command($this->document);
-            $cursor = $this->db->manager->executeCommand($databaseName, $mongoCommand, $execOptions);
+            $cursor = $this->db->manager->executeCommand($databaseName, $mongoCommand, $this->getReadPreference());
             $cursor->setTypeMap($this->db->typeMap);
 
             $this->endProfile($token, __METHOD__);
@@ -195,20 +199,16 @@ class Command extends BaseObject
      * Execute commands batch (bulk).
      * @param string $collectionName collection name.
      * @param array $options batch options.
-     * @param array $execOptions (@see prepareExecBulkWriteOptions())
      * @return array array of 2 elements:
      *
      * - 'insertedIds' - contains inserted IDs.
      * - 'result' - [[\MongoDB\Driver\WriteResult]] instance.
      *
-     * @see https://www.php.net/manual/en/mongodb-driver-server.executebulkwrite.php#refsect1-mongodb-driver-server.executebulkwrite-parameters
      * @throws Exception on failure.
      * @throws InvalidConfigException on invalid [[document]] format.
      */
-    public function executeBatch($collectionName, $options = [], $execOptions = [])
+    public function executeBatch($collectionName, $options = [])
     {
-        $this->prepareExecBulkWriteOptions($execOptions);
-
         $databaseName = $this->databaseName === null ? $this->db->defaultDatabaseName : $this->databaseName;
 
         $token = $this->log([$databaseName, $collectionName, 'bulkWrite'], $this->document, __METHOD__);
@@ -236,7 +236,7 @@ class Command extends BaseObject
             }
 
             $this->db->open();
-            $writeResult = $this->db->manager->executeBulkWrite($databaseName . '.' . $collectionName, $batch, $execOptions);
+            $writeResult = $this->db->manager->executeBulkWrite($databaseName . '.' . $collectionName, $batch, $this->getWriteConcern());
 
             $this->endProfile($token, __METHOD__);
         } catch (RuntimeException $e) {
@@ -254,14 +254,11 @@ class Command extends BaseObject
      * Executes this command as a mongo query
      * @param string $collectionName collection name
      * @param array $options query options.
-     * @param array $execOptions (@see prepareExecQueryOptions())
      * @return \MongoDB\Driver\Cursor result cursor.
      * @throws Exception on failure
      */
-    public function query($collectionName, $options = [], $execOptions = [])
+    public function query($collectionName, $options = [])
     {
-        $this->prepareExecQueryOptions($execOptions);
-
         $databaseName = $this->databaseName === null ? $this->db->defaultDatabaseName : $this->databaseName;
 
         $token = $this->log(
@@ -276,12 +273,17 @@ class Command extends BaseObject
             __METHOD__
         );
 
+        $readConcern = $this->getReadConcern();
+        if ($readConcern !== null) {
+            $options['readConcern'] = $readConcern;
+        }
+
         try {
             $this->beginProfile($token, __METHOD__);
 
             $query = new \MongoDB\Driver\Query($this->document, $options);
             $this->db->open();
-            $cursor = $this->db->manager->executeQuery($databaseName . '.' . $collectionName, $query, $execOptions);
+            $cursor = $this->db->manager->executeQuery($databaseName . '.' . $collectionName, $query, $this->getReadPreference());
             $cursor->setTypeMap($this->db->typeMap);
 
             $this->endProfile($token, __METHOD__);
@@ -295,13 +297,13 @@ class Command extends BaseObject
 
     /**
      * Drops database associated with this command.
-     * @param array $execOptions {@see execute()}
      * @return bool whether operation was successful.
      */
-    public function dropDatabase($execOptions = [])
+    public function dropDatabase()
     {
         $this->document = $this->db->getQueryBuilder()->dropDatabase();
-        $result = current($this->execute($execOptions)->toArray());
+
+        $result = current($this->execute()->toArray());
         return $result['ok'] > 0;
     }
 
@@ -309,26 +311,26 @@ class Command extends BaseObject
      * Creates new collection in database associated with this command.s
      * @param string $collectionName collection name
      * @param array $options collection options in format: "name" => "value"
-     * @param array $execOptions {@see execute()}
      * @return bool whether operation was successful.
      */
-    public function createCollection($collectionName, array $options = [], $execOptions = [])
+    public function createCollection($collectionName, array $options = [])
     {
         $this->document = $this->db->getQueryBuilder()->createCollection($collectionName, $options);
-        $result = current($this->execute($execOptions)->toArray());
+
+        $result = current($this->execute()->toArray());
         return $result['ok'] > 0;
     }
 
     /**
      * Drops specified collection.
      * @param string $collectionName name of the collection to be dropped.
-     * @param array $execOptions {@see execute()}
      * @return bool whether operation was successful.
      */
-    public function dropCollection($collectionName, $execOptions = [])
+    public function dropCollection($collectionName)
     {
         $this->document = $this->db->getQueryBuilder()->dropCollection($collectionName);
-        $result = current($this->execute($execOptions)->toArray());
+
+        $result = current($this->execute()->toArray());
         return $result['ok'] > 0;
     }
 
@@ -346,13 +348,13 @@ class Command extends BaseObject
      *
      * See [[https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/#options-for-all-index-types]]
      * for the full list of options.
-     * @param array $execOptions {@see execute()}
      * @return bool whether operation was successful.
      */
-    public function createIndexes($collectionName, $indexes, $execOptions = [])
+    public function createIndexes($collectionName, $indexes)
     {
         $this->document = $this->db->getQueryBuilder()->createIndexes($this->databaseName, $collectionName, $indexes);
-        $result = current($this->execute($execOptions)->toArray());
+
+        $result = current($this->execute()->toArray());
         return $result['ok'] > 0;
     }
 
@@ -360,29 +362,28 @@ class Command extends BaseObject
      * Drops collection indexes by name.
      * @param string $collectionName collection name.
      * @param string $indexes wildcard for name of the indexes to be dropped.
-     * @param array $execOptions {@see execute()}
      * @return array result data.
      */
-    public function dropIndexes($collectionName, $indexes, $execOptions = [])
+    public function dropIndexes($collectionName, $indexes)
     {
         $this->document = $this->db->getQueryBuilder()->dropIndexes($collectionName, $indexes);
-        return current($this->execute($execOptions)->toArray());
+
+        return current($this->execute()->toArray());
     }
 
     /**
      * Returns information about current collection indexes.
      * @param string $collectionName collection name
      * @param array $options list of options in format: optionName => optionValue.
-     * @param array $execOptions {@see execute()}
      * @return array list of indexes info.
      * @throws Exception on failure.
      */
-    public function listIndexes($collectionName, $options = [], $execOptions = [])
+    public function listIndexes($collectionName, $options = [])
     {
         $this->document = $this->db->getQueryBuilder()->listIndexes($collectionName, $options);
 
         try {
-            $cursor = $this->execute($execOptions);
+            $cursor = $this->execute();
         } catch (Exception $e) {
             // The server may return an error if the collection does not exist.
             $notFoundCodes = [
@@ -404,13 +405,13 @@ class Command extends BaseObject
      * @param string $collectionName collection name
      * @param array $condition filter condition
      * @param array $options list of options in format: optionName => optionValue.
-     * @param array $execOptions {@see execute()}
      * @return int records count
      */
-    public function count($collectionName, $condition = [], $options = [], $execOptions = [])
+    public function count($collectionName, $condition = [], $options = [])
     {
         $this->document = $this->db->getQueryBuilder()->count($collectionName, $condition, $options);
-        $result = current($this->execute($execOptions)->toArray());
+
+        $result = current($this->execute()->toArray());
         return $result['n'];
     }
 
@@ -485,14 +486,13 @@ class Command extends BaseObject
      * @param string $collectionName collection name
      * @param array $document document content
      * @param array $options list of options in format: optionName => optionValue.
-     * @param array $execOptions {@see executeBatch()}
      * @return ObjectID|bool inserted record ID, `false` - on failure.
      */
-    public function insert($collectionName, $document, $options = [], $execOptions = [])
+    public function insert($collectionName, $document, $options = [])
     {
         $this->document = [];
         $this->addInsert($document);
-        $result = $this->executeBatch($collectionName, $options, $execOptions);
+        $result = $this->executeBatch($collectionName, $options);
 
         if ($result['result']->getInsertedCount() < 1) {
             return false;
@@ -506,10 +506,9 @@ class Command extends BaseObject
      * @param string $collectionName collection name
      * @param array[] $documents documents list
      * @param array $options list of options in format: optionName => optionValue.
-     * @param array $execOptions {@see executeBatch()}
      * @return array|false list of inserted IDs, `false` on failure.
      */
-    public function batchInsert($collectionName, $documents, $options = [], $execOptions = [])
+    public function batchInsert($collectionName, $documents, $options = [])
     {
         $this->document = [];
         foreach ($documents as $key => $document) {
@@ -519,7 +518,7 @@ class Command extends BaseObject
             ];
         }
 
-        $result = $this->executeBatch($collectionName, $options, $execOptions);
+        $result = $this->executeBatch($collectionName, $options);
 
         if ($result['result']->getInsertedCount() < 1) {
             return false;
@@ -534,10 +533,9 @@ class Command extends BaseObject
      * @param array $condition filter condition
      * @param array $document data to be updated.
      * @param array $options update options.
-     * @param array $execOptions {@see executeBatch()}
      * @return WriteResult write result.
      */
-    public function update($collectionName, $condition, $document, $options = [], $execOptions = [])
+    public function update($collectionName, $condition, $document, $options = [])
     {
         $batchOptions = [];
         foreach (['bypassDocumentValidation'] as $name) {
@@ -549,7 +547,7 @@ class Command extends BaseObject
 
         $this->document = [];
         $this->addUpdate($condition, $document, $options);
-        $result = $this->executeBatch($collectionName, $batchOptions, $execOptions);
+        $result = $this->executeBatch($collectionName, $batchOptions);
 
         return $result['result'];
     }
@@ -559,10 +557,9 @@ class Command extends BaseObject
      * @param string $collectionName collection name.
      * @param array $condition filter condition.
      * @param array $options delete options.
-     * @param array $execOptions {@see executeBatch()}
      * @return WriteResult write result.
      */
-    public function delete($collectionName, $condition, $options = [], $execOptions = [])
+    public function delete($collectionName, $condition, $options = [])
     {
         $batchOptions = [];
         foreach (['bypassDocumentValidation'] as $name) {
@@ -574,7 +571,7 @@ class Command extends BaseObject
 
         $this->document = [];
         $this->addDelete($condition, $options);
-        $result = $this->executeBatch($collectionName, $batchOptions, $execOptions);
+        $result = $this->executeBatch($collectionName, $batchOptions);
 
         return $result['result'];
     }
@@ -584,10 +581,9 @@ class Command extends BaseObject
      * @param string $collectionName collection name
      * @param array $condition filter condition
      * @param array $options query options.
-     * @param array $execOptions {@see query()}
      * @return \MongoDB\Driver\Cursor result cursor.
      */
-    public function find($collectionName, $condition, $options = [], $execOptions = [])
+    public function find($collectionName, $condition, $options = [])
     {
         $queryBuilder = $this->db->getQueryBuilder();
 
@@ -616,7 +612,7 @@ class Command extends BaseObject
             }
         }
 
-        return $this->query($collectionName, $options, $execOptions);
+        return $this->query($collectionName, $options);
     }
 
     /**
@@ -625,13 +621,12 @@ class Command extends BaseObject
      * @param array $condition query condition
      * @param array $update update criteria
      * @param array $options list of options in format: optionName => optionValue.
-     * @param array $execOptions {@see execute()}
      * @return array|null the original document, or the modified document when $options['new'] is set.
      */
-    public function findAndModify($collectionName, $condition = [], $update = [], $options = [], $execOptions = [])
+    public function findAndModify($collectionName, $condition = [], $update = [], $options = [])
     {
         $this->document = $this->db->getQueryBuilder()->findAndModify($collectionName, $condition, $update, $options);
-        $cursor = $this->execute($execOptions);
+        $cursor = $this->execute();
 
         $result = current($cursor->toArray());
 
@@ -648,13 +643,12 @@ class Command extends BaseObject
      * @param string $fieldName field name to use.
      * @param array $condition query parameters.
      * @param array $options list of options in format: optionName => optionValue.
-     * @param array $execOptions {@see execute()}
      * @return array array of distinct values, or "false" on failure.
      */
-    public function distinct($collectionName, $fieldName, $condition = [], $options = [], $execOptions = [])
+    public function distinct($collectionName, $fieldName, $condition = [], $options = [])
     {
         $this->document = $this->db->getQueryBuilder()->distinct($collectionName, $fieldName, $condition, $options);
-        $cursor = $this->execute($execOptions);
+        $cursor = $this->execute();
 
         $result = current($cursor->toArray());
 
@@ -678,13 +672,12 @@ class Command extends BaseObject
      * @param array $options optional parameters to the group command. Valid options include:
      *  - condition - criteria for including a document in the aggregation.
      *  - finalize - function called once per unique key that takes the final output of the reduce function.
-     * @param array $execOptions {@see execute()}
      * @return array the result of the aggregation.
      */
-    public function group($collectionName, $keys, $initial, $reduce, $options = [], $execOptions = [])
+    public function group($collectionName, $keys, $initial, $reduce, $options = [])
     {
         $this->document = $this->db->getQueryBuilder()->group($collectionName, $keys, $initial, $reduce, $options);
-        $cursor = $this->execute($execOptions);
+        $cursor = $this->execute();
 
         $result = current($cursor->toArray());
 
@@ -712,13 +705,12 @@ class Command extends BaseObject
      *  - jsMode: bool, specifies whether to convert intermediate data into BSON format between the execution of the map and reduce functions.
      *  - verbose: bool, specifies whether to include the timing information in the result information.
      *
-     * @param array $execOptions {@see execute()}
      * @return string|array the map reduce output collection name or output results.
      */
-    public function mapReduce($collectionName, $map, $reduce, $out, $condition = [], $options = [], $execOptions = [])
+    public function mapReduce($collectionName, $map, $reduce, $out, $condition = [], $options = [])
     {
         $this->document = $this->db->getQueryBuilder()->mapReduce($collectionName, $map, $reduce, $out, $condition, $options);
-        $cursor = $this->execute($execOptions);
+        $cursor = $this->execute();
 
         $result = current($cursor->toArray());
 
@@ -732,10 +724,9 @@ class Command extends BaseObject
      * @param string $collectionName collection name
      * @param array $pipelines list of pipeline operators.
      * @param array $options optional parameters.
-     * @param array $execOptions {@see execute()}
      * @return array|\MongoDB\Driver\Cursor aggregation result.
      */
-    public function aggregate($collectionName, $pipelines, $options = [], $execOptions = [])
+    public function aggregate($collectionName, $pipelines, $options = [])
     {
         if (empty($options['cursor'])) {
             $returnCursor = false;
@@ -745,7 +736,7 @@ class Command extends BaseObject
         }
 
         $this->document = $this->db->getQueryBuilder()->aggregate($collectionName, $pipelines, $options);
-        $cursor = $this->execute($execOptions);
+        $cursor = $this->execute();
 
         if ($returnCursor) {
             return $cursor;
@@ -758,13 +749,12 @@ class Command extends BaseObject
      * Return an explanation of the query, often useful for optimization and debugging.
      * @param string $collectionName collection name
      * @param array $query query document.
-     * @param array $execOptions {@see execute()}
      * @return array explanation of the query.
      */
-    public function explain($collectionName, $query, $execOptions = [])
+    public function explain($collectionName, $query)
     {
         $this->document = $this->db->getQueryBuilder()->explain($collectionName, $query);
-        $cursor = $this->execute($execOptions);
+        $cursor = $this->execute();
 
         return current($cursor->toArray());
     }
@@ -773,17 +763,16 @@ class Command extends BaseObject
      * Returns the list of available databases.
      * @param array $condition filter condition.
      * @param array $options options list.
-     * @param array $execOptions {@see execute()}
      * @return array database information
      */
-    public function listDatabases($condition = [], $options = [], $execOptions = [])
+    public function listDatabases($condition = [], $options = [])
     {
         if ($this->databaseName === null) {
             $this->databaseName = 'admin';
         }
         $this->document = $this->db->getQueryBuilder()->listDatabases($condition, $options);
 
-        $cursor = $this->execute($execOptions);
+        $cursor = $this->execute();
         $result = current($cursor->toArray());
 
         if (empty($result['databases'])) {
@@ -796,13 +785,12 @@ class Command extends BaseObject
      * Returns the list of available collections.
      * @param array $condition filter condition.
      * @param array $options options list.
-     * @param array $execOptions {@see execute()}
      * @return array collections information.
      */
-    public function listCollections($condition = [], $options = [], $execOptions = [])
+    public function listCollections($condition = [], $options = [])
     {
         $this->document = $this->db->getQueryBuilder()->listCollections($condition, $options);
-        $cursor = $this->execute($execOptions);
+        $cursor = $this->execute();
 
         return $cursor->toArray();
     }

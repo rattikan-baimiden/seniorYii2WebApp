@@ -1,8 +1,8 @@
 <?php
 /**
- * @link https://www.yiiframework.com/
+ * @link http://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
- * @license https://www.yiiframework.com/license/
+ * @license http://www.yiiframework.com/license/
  */
 
 namespace yii\mongodb;
@@ -64,16 +64,15 @@ use Yii;
  * ]
  * ```
  *
- * @property-read Database $database Database instance.
+ * @property Database $database Database instance. This property is read-only.
  * @property string $defaultDatabaseName Default database name.
- * @property-read file\Collection $fileCollection Mongo GridFS collection instance.
- * @property-read bool $isActive Whether the Mongo connection is established.
+ * @property file\Collection $fileCollection Mongo GridFS collection instance. This property is read-only.
+ * @property bool $isActive Whether the Mongo connection is established. This property is read-only.
  * @property LogBuilder $logBuilder The log builder for this connection. Note that the type of this property
  * differs in getter and setter. See [[getLogBuilder()]] and [[setLogBuilder()]] for details.
  * @property QueryBuilder $queryBuilder The query builder for the this MongoDB connection. Note that the type
  * of this property differs in getter and setter. See [[getQueryBuilder()]] and [[setQueryBuilder()]] for
  * details.
- * @property-write ClientSession|null $session New instance of ClientSession to replace return $this.
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
@@ -84,26 +83,6 @@ class Connection extends Component
      * @event Event an event that is triggered after a DB connection is established
      */
     const EVENT_AFTER_OPEN = 'afterOpen';
-    /**
-     * @event yii\base\Event an event that is triggered right before a mongo client session is started
-     */
-    const EVENT_START_SESSION = 'startSession';
-    /**
-     * @event yii\base\Event an event that is triggered right after a mongo client session is ended
-     */
-    const EVENT_END_SESSION = 'endSession';
-    /**
-     * @event yii\base\Event an event that is triggered right before a transaction is started
-     */
-    const EVENT_START_TRANSACTION = 'startTransaction';
-    /**
-     * @event yii\base\Event an event that is triggered right after a transaction is committed
-     */
-    const EVENT_COMMIT_TRANSACTION = 'commitTransaction';
-    /**
-     * @event yii\base\Event an event that is triggered right after a transaction is rolled back
-     */
-    const EVENT_ROLLBACK_TRANSACTION = 'rollbackTransaction';
 
     /**
      * @var string host:port
@@ -175,21 +154,7 @@ class Connection extends Component
      * @since 2.1
      */
     public $fileStreamWrapperClass = 'yii\mongodb\file\StreamWrapper';
-    /**
-     * @var array default options for `executeCommand` , executeBulkWrite and executeQuery method of MongoDB\Driver\Manager in `Command` class.
-     */
-    public $globalExecOptions = [
-        /**
-         * Shared between some(or all) methods(executeCommand|executeBulkWrite|executeQuery).
 
-         * This options are :
-         * - session
-         */
-        'share' => [],
-        'command' => [],
-        'bulkWrite' => [],
-        'query' => [],
-    ];
     /**
      * @var string name of the MongoDB database to use by default.
      * If this field left blank, connection instance will attempt to determine it from
@@ -384,7 +349,7 @@ class Connection extends Component
             }
             $token = 'Opening MongoDB connection: ' . $this->dsn;
             try {
-                Yii::debug($token, __METHOD__);
+                Yii::trace($token, __METHOD__);
                 Yii::beginProfile($token, __METHOD__);
                 $options = $this->options;
 
@@ -415,7 +380,7 @@ class Connection extends Component
     public function close()
     {
         if ($this->manager !== null) {
-            Yii::debug('Closing MongoDB connection: ' . $this->dsn, __METHOD__);
+            Yii::trace('Closing MongoDB connection: ' . $this->dsn, __METHOD__);
             $this->manager = null;
             foreach ($this->_databases as $database) {
                 $database->clearCollections();
@@ -447,7 +412,6 @@ class Connection extends Component
             'db' => $this,
             'databaseName' => $databaseName,
             'document' => $document,
-            'globalExecOptions' => $this->globalExecOptions
         ]);
     }
 
@@ -467,230 +431,5 @@ class Connection extends Component
         }
 
         return $this->fileStreamProtocol;
-    }
-
-    /**
-     * Recursive replacement on $this->globalExecOptions with new options. {@see $this->globalExecOptions}
-     * @param array $newExecOptions {@see $this->globalExecOptions}
-     * @return $this
-     */
-    public function execOptions($newExecOptions)
-    {
-        if (empty($newExecOptions)) {
-            $this->globalExecOptions = [];
-        }
-        else {
-            $this->globalExecOptions = array_replace_recursive($this->globalExecOptions, $newExecOptions);
-        }
-        return $this;
-    }
-
-    /**
-     * Ends the previous session and starts the new session.
-     * @param array $sessionOptions see doc of ClientSession::start()
-     * return ClientSession
-     */
-    public function startSession($sessionOptions = [])
-    {
-
-        if ($this->getInSession()) {
-            $this->getSession()->end();
-        }
-
-        $newSession = $this->newSession($sessionOptions);
-        $this->setSession($newSession);
-        return $newSession;
-    }
-
-    /**
-     * Starts a new session if the session has not started, otherwise returns previous session.
-     * @param array $sessionOptions see doc of ClientSession::start()
-     * return ClientSession
-     */
-    public function startSessionOnce($sessionOptions = [])
-    {
-        if ($this->getInSession()) {   
-            return $this->getSession();
-        }
-        return $this->startSession($sessionOptions);
-    }
-
-    /**
-     * Only starts the new session for current connection but this session does not set for current connection.
-     * @param array $sessionOptions see doc of ClientSession::start()
-     * return ClientSession
-     */
-    public function newSession($sessionOptions = [])
-    {
-        return ClientSession::start($this, $sessionOptions);
-    }
-
-    /**
-     * Checks whether the current connection is in session.
-     * return bool
-     */
-    public function getInSession()
-    {
-        return array_key_exists('session',$this->globalExecOptions['share']);
-    }
-
-    /**
-     * Checks that the current connection is in session and transaction
-     * return bool
-     */
-    public function getInTransaction()
-    {
-        return $this->getInSession() && $this->getSession()->getInTransaction();
-    }
-
-    /**
-     * Throws custom error if transaction is not ready in connection
-     * @param string $operation a custom message to be shown
-     */
-    public function transactionReady($operation)
-    {
-        if (!$this->getInSession()) {
-            throw new Exception('You can\'t ' . $operation . ' because current connection is\'t in a session.');
-        }
-        if (!$this->getSession()->getInTransaction()) {
-            throw new Exception('You can\'t ' . $operation . ' because transaction not started in current session.');
-        }
-    }
-
-    /**
-     * Returns current session
-     * return ClientSession|null
-     */
-    public function getSession()
-    {
-        return $this->getInSession() ? $this->globalExecOptions['share']['session'] : null;
-    }
-
-    /**
-     * Starts a transaction with three steps :
-     * - starts new session if has not started
-     * - starts the transaction in new session
-     * - sets new session to current connection
-     * @param array $transactionOptions see doc of Transaction::start()
-     * @param array $sessionOptions see doc of ClientSession::start()
-     * return ClientSession
-     */
-    public function startTransaction($transactionOptions = [], $sessionOptions = [])
-    {
-        $session = $this->startSession($sessionOptions,true);
-        $session->getTransaction()->start($transactionOptions);
-        return $session;
-    }
-
-    /**
-     * Starts a transaction in current session if the previous transaction was not started in current session.
-     * @param array $transactionOptions see doc of Transaction::start()
-     * @param array $sessionOptions see doc of ClientSession::start()
-     * return ClientSession
-     */
-    public function startTransactionOnce($transactionOptions = [], $sessionOptions = [])
-    {
-        if ($this->getInTransaction()) {
-            return $this->getSession();
-        }
-        return $this->startTransaction($transactionOptions,$sessionOptions);
-    }
-
-    /**
-     * Commits transaction in current session
-     */
-    public function commitTransaction()
-    {
-        $this->transactionReady('commit transaction');
-        $this->getSession()->transaction->commit();
-    }
-
-    /**
-     * Rollbacks transaction in current session
-     */
-    public function rollBackTransaction()
-    {
-        $this->transactionReady('roll back transaction');
-        $this->getSession()->transaction->rollBack();
-    }
-
-    /**
-     * Changes the current session of connection to execute commands (or drop session)
-     * @param ClientSession|null $clientSession new instance of ClientSession to replace
-     * return $this
-     */
-    public function setSession($clientSession)
-    {
-        #drop session
-        if (empty($clientSession)) {
-            unset($this->globalExecOptions['share']['session']);
-        }
-        else {
-            $this->globalExecOptions['share']['session'] = $clientSession;
-        }
-        return $this;
-    }
-
-    /**
-     * Starts and commits a transaction in easy mode.
-     * @param callable $actions your block of code must be runned after transaction started and before commit
-     * if the $actions returns false then transaction rolls back.
-     * @param array $transactionOptions see doc of Transaction::start()
-     * @param array $sessionOptions see doc of ClientSession::start()
-     */
-    public function transaction(callable $actions, $transactionOptions = [], $sessionOptions = [])
-    {
-        $session = $this->startTransaction($transactionOptions, $sessionOptions);
-        $success = false;
-        try {
-            $result = call_user_func($actions, $session);
-            if ($session->getTransaction()->getIsActive()) {
-                if ($result === false) {
-                    $session->getTransaction()->rollBack();
-                }
-                else {
-                    $session->getTransaction()->commit();
-                }
-            }
-            $success = true;
-        } finally {
-            if (!$success && $session->getTransaction()->getIsActive()) {
-                $session->getTransaction()->rollBack();
-            }
-        }
-    }
-
-    /**
-     * Starts and commits transaction in easy mode if the previous transaction was not executed,
-     * otherwise only runs your actions in previous transaction.
-     * @param callable $actions your block of code must be runned after transaction started and before commit
-     * @param array $transactionOptions see doc of Transaction::start()
-     * @param array $sessionOptions see doc of ClientSession::start()
-     */
-    public function transactionOnce(callable $actions, $transactionOptions = [], $sessionOptions = [])
-    {
-        if ($this->getInTransaction()) {
-            $actions();
-        }
-        else {
-            $this->transaction($actions,$transactionOptions,$sessionOptions);
-        }
-    }
-
-    /**
-     * Runs your mongodb command out of session and transaction.
-     * @param callable $actions your block of code must be runned out of session and transaction
-     * @return mixed returns a result of $actions()
-     */
-    public function noTransaction(callable $actions)
-    {
-        $lastSession = $this->getSession();
-        $this->setSession(null);
-        try {
-            $result = $actions();
-        } finally {
-            $this->setSession($lastSession);
-        }
-        return $result;
     }
 }

@@ -1,8 +1,8 @@
 <?php
 /**
- * @link https://www.yiiframework.com/
+ * @link http://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
- * @license https://www.yiiframework.com/license/
+ * @license http://www.yiiframework.com/license/
  */
 
 namespace yii\mongodb;
@@ -31,7 +31,7 @@ use yii\helpers\ArrayHelper;
  * $rows = $query->all();
  * ```
  *
- * @property-read Collection $collection Collection instance.
+ * @property Collection $collection Collection instance. This property is read-only.
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 2.0
@@ -158,7 +158,7 @@ class Query extends Component implements QueryInterface
     public function andFilterCompare($name, $value, $defaultOperator = '=')
     {
         $matches = [];
-        if (preg_match('/^(<>|>=|>|<=|<|=)/', (string)$value, $matches)) {
+        if (preg_match('/^(<>|>=|>|<=|<|=)/', $value, $matches)) {
             $op = $matches[1];
             $value = substr($value, strlen($op));
         } else {

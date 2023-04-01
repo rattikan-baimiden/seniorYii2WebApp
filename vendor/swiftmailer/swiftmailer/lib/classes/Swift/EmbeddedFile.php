@@ -13,29 +13,41 @@
  *
  * @author Chris Corbyn
  */
-class Swift_Mime_EmbeddedFile extends Swift_Mime_Attachment
+class Swift_EmbeddedFile extends Swift_Mime_EmbeddedFile
 {
     /**
-     * Creates a new Attachment with $headers and $encoder.
+     * Create a new EmbeddedFile.
      *
-     * @param array $mimeTypes optional
+     * Details may be optionally provided to the constructor.
+     *
+     * @param string|Swift_OutputByteStream $data
+     * @param string                        $filename
+     * @param string                        $contentType
      */
-    public function __construct(Swift_Mime_SimpleHeaderSet $headers, Swift_Mime_ContentEncoder $encoder, Swift_KeyCache $cache, Swift_IdGenerator $idGenerator, $mimeTypes = [])
+    public function __construct($data = null, $filename = null, $contentType = null)
     {
-        parent::__construct($headers, $encoder, $cache, $idGenerator, $mimeTypes);
-        $this->setDisposition('inline');
-        $this->setId($this->getId());
+        \call_user_func_array(
+            [$this, 'Swift_Mime_EmbeddedFile::__construct'],
+            Swift_DependencyContainer::getInstance()
+                ->createDependenciesFor('mime.embeddedfile')
+            );
+
+        $this->setBody($data);
+        $this->setFilename($filename);
+        if ($contentType) {
+            $this->setContentType($contentType);
+        }
     }
 
     /**
-     * Get the nesting level of this EmbeddedFile.
+     * Create a new EmbeddedFile from a filesystem path.
      *
-     * Returns {@see LEVEL_RELATED}.
+     * @param string $path
      *
-     * @return int
+     * @return Swift_Mime_EmbeddedFile
      */
-    public function getNestingLevel()
+    public static function fromPath($path)
     {
-        return self::LEVEL_RELATED;
+        return (new self())->setFile(new Swift_ByteStream_FileByteStream($path));
     }
 }
