@@ -67,4 +67,28 @@ class ExpensesSearch extends Expenses
 
         return $dataProvider;
     }
+
+    public function expense_search($user_id)
+    {
+        $query = Expenses::find();
+
+        // add conditions that should always apply here
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            // 'sort' => ['defaultOrder'=>'create_date asc']
+
+        ]);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        // grid filtering conditions
+        $query->andFilterWhere(['like', 'create_by', $user_id]);
+
+        return $dataProvider;
+    }
 }

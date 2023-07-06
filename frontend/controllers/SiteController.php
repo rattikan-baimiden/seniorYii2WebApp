@@ -2,6 +2,10 @@
 
 namespace frontend\controllers;
 
+use app\models\Expenses;
+use app\models\ExpensesSearch;
+use app\models\Incomes;
+use app\models\IncomesSearch;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use frontend\models\Event;
@@ -189,7 +193,26 @@ class SiteController extends Controller
      */
     public function actionOverview()
     {
+        // $expenseModel = new Expenses();
+        // $expenseModel = Expenses::findOne(['_id' => $expenseModel->_id]);
+        // return $this->render('overview',[
+        //     'expenseModel' => $expenseModel
+        // ]);
+
+        // $incomeModel = new Incomes();
+        // $income = Incomes::find()->where([(String)Yii::$app->user->identity->id])->one();
+        // $amount = $incomeModel->amount;
+        // if(!empty($income)) {
+        //     $incomeModel = Incomes::findOne(($income->id));
+        //     $total[] = (String)((int)$incomeModel->amount + $amount);
+        // }
         return $this->render('overview');
+
+        // $incomeModel = new Incomes();
+        // $incomeModel = Incomes::findOne(['_id' => $incomeModel->_id]);
+        // return $this->render('overview',[
+        //     'incomeModel' => $incomeModel
+        // ]);
     }
 
     /**
@@ -199,12 +222,22 @@ class SiteController extends Controller
      */
     public function actionIncome()
     {
-        return $this->render('income');
+        $income = new IncomesSearch();
+        $user_id = (String)Yii::$app->user->identity->id;
+        $incomeModel = $income->income_search($user_id);
+        return $this->render('income',[
+            'incomeModel' => $incomeModel
+        ]);
     }
 
     public function actionExpense()
     {
-        return $this->render('expense');
+        $expense = new ExpensesSearch();
+        $user_id = (String)Yii::$app->user->identity->id;
+        $expenseModel = $expense->expense_search($user_id);
+        return $this->render('expense',[
+            'expenseModel' => $expenseModel
+        ]);
     }
 
     /**

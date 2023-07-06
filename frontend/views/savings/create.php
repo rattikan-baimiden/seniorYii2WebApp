@@ -11,8 +11,6 @@ $this->title = 'Add Savings';
 ?>
 <div class="savings-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

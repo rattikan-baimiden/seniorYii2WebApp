@@ -12,20 +12,8 @@ $this->title = $model->_id;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="expenses-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Update', ['update', '_id' => (string) $model->_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', '_id' => (string) $model->_id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
+    <?= Html::a('back', ['expenses/index'], ['class' => 'profile-link']) ?>
+    
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -41,10 +29,21 @@ $this->title = $model->_id;
             ],
             'amount',
             'create_date',
-            'update_date',
+            // 'update_date',
             // 'create_by',
             // 'update_by',
         ],
     ]) ?>
+
+    <p>
+        <?= Html::a('Update', ['update', '_id' => (string) $model->_id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', '_id' => (string) $model->_id], [
+            'class' => 'btn btn-danger',
+            'data' => [
+                'confirm' => 'Are you sure you want to delete this item?',
+                'method' => 'post',
+            ],
+        ]) ?>
+    </p>
 
 </div>

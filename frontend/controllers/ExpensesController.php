@@ -2,7 +2,8 @@
 
 namespace frontend\controllers;
 
-
+use app\models;
+use yii\base\Model;
 use Yii;
 use DateTime;
 use app\models\Expenses;
@@ -42,16 +43,14 @@ class ExpensesController extends Controller
      */
     public function actionIndex()
     {
-        // $expense = Expenses::find()->where(["user_id"=>(String)Yii::$app->user->identity->id])->all();
         $searchModel = new ExpensesSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
-        // $expense = new ActiveDataProvider(['query'=>Expenses::find()->where(["user_id"=>(String)Yii::$app->user->identity->id])->all()]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            // 'expense' => $expense
         ]);
+
     }
 
      /**
@@ -90,13 +89,19 @@ class ExpensesController extends Controller
                     $model->update_date = Yii::$app->formatter->asDate($model->update_date, 'yyyy-MM-dd');
                 }
                 if ($model->save()) {
-                    return $this->redirect(['view', '_id' => (string) $model->_id]);
+                    Yii::$app->session->setFlash('success', 'Expense Added');
+                    return $this->redirect(['site/overview']);
                 }
             }
+            return $this->render('site/overview', [
+                'model' => $model,
+            ]);
         } 
         return $this->render('create', [
             'model' => $model,
         ]);
+
+        
     }
 
      /**
@@ -139,7 +144,7 @@ class ExpensesController extends Controller
     public function actionDelete($_id)
     {
         $this->findModel($_id)->delete();
-
+        Yii::$app->session->setFlash('danger', 'Expense Deleted');
         return $this->redirect(['index']);
     }
 
