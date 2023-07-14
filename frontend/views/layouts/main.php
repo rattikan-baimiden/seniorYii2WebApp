@@ -46,31 +46,30 @@ AppAsset::register($this);
             'brandLabel' => Yii::$app->name,
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
-                'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
+                'class' => 'navbar navbar-expand-md navbar-light bg-light fixed-top',
             ],
         ]);
-        $menuItems = [
-            $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']]
-        ];
+
         if (Yii::$app->user->isGuest) {
+            $menuItems[] = ['label' => 'Home', 'url' => ['/site/index']];
             $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
             $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
         } else {
-            $menuItems[] = ['label' => 'About', 'url' => ['/site/about']];
-            $menuItems[] = ['label' => 'Contact', 'url' => ['/site/contact']];
             $menuItems[] = ['label' => 'Expenses', 'url' => ['/expenses/index']];
             $menuItems[] = ['label' => 'Incomes', 'url' => ['/incomes/index']];
-            $menuItems[] = ['label' => 'Types', 'url' => ['/types/index']];
+            // $menuItems[] = ['label' => 'Types', 'url' => ['/types/index']];
             $menuItems[] = ['label' => 'Savings', 'url' => ['/savings/index']];
             $menuItems[] = ['label' => 'Limit', 'url' => ['/limit/index']];
             $menuItems[] = ['label' => 'Overview', 'url' => ['/site/overview']];
+            $menuItems[] = ['label' => 'Income Type', 'url' => ['/typeincome/index']];
+            $menuItems[] = ['label' => 'Expense Type', 'url' => ['/typesexpense/index']];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
                 . Html::submitButton(
                     'Logout (' . Yii::$app->user->identity->username . ')',
                     ['class' => 'btn btn-link logout']
                 )
-                . Html::endForm()
+                . Html::endForm() 
                 . '</li>';
         }
         echo Nav::widget([
@@ -90,7 +89,8 @@ AppAsset::register($this);
             <?= $content ?>
         </div>
     </main>
-
+    <?php if (class_exists('yii\debug\Module')) {
+    $this->off(\yii\web\View::EVENT_END_BODY, [\yii\debug\Module::getInstance(), 'renderToolbar']);} ?>
     <?php $this->endBody() ?>
 </body>
 

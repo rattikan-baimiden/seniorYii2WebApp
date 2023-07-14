@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use Yii;
 use app\models\Savings;
 use app\models\SavingsSearch;
 use yii\web\Controller;
@@ -71,7 +72,8 @@ class SavingsController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', '_id' => (string) $model->_id]);
+                Yii::$app->session->setFlash('success', 'Saving Added');
+                return $this->redirect(['site/overview']);
             }
         } 
 
@@ -110,7 +112,7 @@ class SavingsController extends Controller
     public function actionDelete($_id)
     {
         $this->findModel($_id)->delete();
-
+        Yii::$app->session->setFlash('danger', 'Saving Deleted');
         return $this->redirect(['index']);
     }
 

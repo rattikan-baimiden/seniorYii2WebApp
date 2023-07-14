@@ -13,8 +13,19 @@ use yii\widgets\DetailView;
 ?>
 <div class="limit-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
+    <?= Html::a('back', ['limit/index'], ['class' => 'profile-link']) ?>
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            // '_id',
+            'amount',
+            // 'user_id',
+            'create_date',
+            // 'update_date',
+            // 'create_by',
+            // 'update_by',
+        ],
+    ]) ?>
     <p>
         <?= Html::a('Update', ['update', '_id' => (string) $model->_id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', '_id' => (string) $model->_id], [
@@ -25,18 +36,5 @@ use yii\widgets\DetailView;
             ],
         ]) ?>
     </p>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            // '_id',
-            'amount',
-            // 'user_id',
-            'create_date',
-            'update_date',
-            // 'create_by',
-            // 'update_by',
-        ],
-    ]) ?>
 
 </div>

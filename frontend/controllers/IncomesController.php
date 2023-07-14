@@ -84,7 +84,8 @@ class IncomesController extends Controller
                     $model->update_date = Yii::$app->formatter->asDate($model->update_date, 'yyyy-MM-dd');
                 }
                 if ($model->save()) {
-                    return $this->redirect(['view', '_id' => (string) $model->_id]);
+                    Yii::$app->session->setFlash('success', 'Income Added');
+                    return $this->redirect(['site/overview']);
                 }
             }  
         } 
@@ -131,7 +132,7 @@ class IncomesController extends Controller
     public function actionDelete($_id)
     {
         $this->findModel($_id)->delete();
-
+        Yii::$app->session->setFlash('danger', 'Income Deleted');
         return $this->redirect(['index']);
     }
 
