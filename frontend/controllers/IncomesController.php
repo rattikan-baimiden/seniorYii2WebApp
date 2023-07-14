@@ -41,6 +41,7 @@ class IncomesController extends Controller
     {
         $searchModel = new IncomesSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
+        
 
         return $this->render('index', [
             'searchModel' => $searchModel,

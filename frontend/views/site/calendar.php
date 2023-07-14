@@ -88,14 +88,22 @@ $this->title = 'Calendar';
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
+
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            eventClick: function(info) {
-                var eventObj = info.event;
-                if (eventObj.start) {
-                    alert('Clicked' + eventObj.start);
-                }
+            selectable: true,
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth'
+            },
+            dateClick: function(info) {
+                document.location.href = 'http://localhost/yii2webApp/frontend/web/index.php?r=site%2Fincome';
+            },
+            select: function(info) {
+                alert('selected ' + info.startStr);
             }
         });
+
         calendar.render();
     });
 </script>
