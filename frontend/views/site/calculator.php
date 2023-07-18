@@ -2,6 +2,7 @@
 
 /** @var yii\web\View $this */
 
+use app\models\Savings;
 use yii\helpers\Html;
 
 $this->title = 'Calculator';
@@ -74,13 +75,13 @@ $this->title = 'Calculator';
                                 <?= Html::a('<i class="fa-solid fa-house" style="color:#0B0B45; font-size: 1.4em; "></i>', ['/site/overview']); ?>
                             </th>
                             <th>
-                                <?= Html::a('<i class="fa-regular fa-calendar" style="color:#0B0B45; font-size: 1.4em;"></i>', ['/site/calendar']); ?>
+                                <?= Html::a('<i class="fa-regular fa-calendar" style="color:red; font-size: 2em;"></i>', ['/site/calendar']); ?>
                             </th>
                             <th>
-                                <?= Html::a('<i class="fa-solid fa-money-check" style="color:#0B0B45; font-size: 1.4em;"></i>', ['/site/limit']); ?>
+                                <?= Html::a('<i class="fa-solid fa-money-check" style="color:blue; font-size: 2em;"></i>', ['/site/limit']); ?>
                             </th>
                             <th>
-                                <?= Html::a('<i class="fa-solid fa-chart-simple" style="color:#0B0B45; font-size: 1.4em;"></i>', ['/site/bar']); ?>
+                                <?= Html::a('<i class="fa-solid fa-chart-simple" style="color:orange; font-size: 2em;"></i>', ['/site/bar']); ?>
                             </th>
                         </tr>
                         <tr>
@@ -101,23 +102,33 @@ $this->title = 'Calculator';
                 <?= Html::a('Calculator', ['/site/calculator'], ['class' => 'btn btn-info border font']); ?>
             </div>
             <br>
+
+            <?php 
+                $amount_saving = 0;
+                $_id = 0;
+                $saving = Savings::find()->where(["user_id"=>(String)Yii::$app->user->identity->id])->all();
+                foreach ($saving as $s) {
+                    $amount_saving = $s->amount;
+                    $_id = $s->_id;
+                }
+            ?>
             <div class="card" style="width: 100%; ">
                 <div class="containerB">
                     <p style="margin-right: 200px;">Saving</p>
-                    <h4 style="margin-bottom: 20px;"><b>250 ฿</b></h4>
+                    <h4 style="margin-bottom: 20px;"><b>0 THB</b></h4>
                     <table>
                         <tr>
                             <th>
                                 <div class="cartTotal" style="background-color: #020035; color:white; ">
                                     <p>Goal</p>
-                                    <p>500 ฿</p>
+                                    <p> <?php echo $amount_saving ?> THB </p>
                                 </div>
                             </th>
                             <th>
                                 <div style="margin-left: 5px;">
                                     <div class="cartTotal" style="background-color: #020035; color:white;">
-                                        <p>Cash Short</p>
-                                        <p>250 ฿</p>
+                                        <p>Current savings</p>
+                                        <p>0 THB</p>
                                     </div>
                                 </div>
                             </th>
@@ -126,6 +137,12 @@ $this->title = 'Calculator';
 
                 </div>
             </div>
+            <?php 
+                if ($_id !== 0 && $_id !== null) {
+                    echo Html::a('Edit', ['/site/update-saving', '_id' => (string)$_id], ['class' => 'btn btn-primary rounded-pill shadow-lg']);
+                    echo Html::a('Delete', ['/site/delete-saving', '_id' => (string)$_id], ['class' => 'btn btn-danger rounded-pill shadow-lg']); 
+                }
+            ?>
         </center>
     </div>
 </body>

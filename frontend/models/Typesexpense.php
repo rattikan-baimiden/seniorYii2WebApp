@@ -30,6 +30,9 @@ class Typesexpense extends \yii\mongodb\ActiveRecord
             '_id',
             'type_name',
             'status',
+            'ratio',
+            'user_id',
+            'create_date'
         ];
     }
 
@@ -39,7 +42,7 @@ class Typesexpense extends \yii\mongodb\ActiveRecord
     public function rules()
     {
         return [
-            [['type_name', 'status'], 'safe']
+            [['type_name', 'status', 'ratio','user_id','create_date'], 'safe']
         ];
     }
 
@@ -52,6 +55,9 @@ class Typesexpense extends \yii\mongodb\ActiveRecord
             '_id' => 'ID',
             'type_name' => 'Type Name',
             'status' => 'Status',
+            'ratio'  => 'Ratio',
+            'user_id' => 'User Id',
+            'create_date' => 'Create Date'
         ];
     }
     public function getTableSchema()

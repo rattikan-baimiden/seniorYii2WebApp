@@ -34,13 +34,17 @@ class Savings extends \yii\mongodb\ActiveRecord
 
     public function rules()
     {
-        return [
-            [['amount', 'start_date', 'end_date', 'user_id'], 'safe'],
-            // ensure empty values are stored as NULL in the database
-            ['start_date', 'default', 'value' => null],
+        // return [
+        //     [['amount', 'start_date', 'end_date', 'user_id'], 'safe'],
+        //     // ensure empty values are stored as NULL in the database
+        //     ['start_date', 'default', 'value' => null],
 
-            // validate the date and overwrite `deadline` with the unix timestamp
-            ['start_date', 'date', 'timestampAttribute' => 'start_date'],
+        //     // validate the date and overwrite `deadline` with the unix timestamp
+        //     ['start_date', 'date', 'timestampAttribute' => 'start_date'],
+        // ];
+
+        return [
+            [['amount', 'start_date', 'end_date', 'user_id'], 'safe']
         ];
     }
 

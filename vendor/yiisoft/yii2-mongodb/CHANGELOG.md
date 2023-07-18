@@ -1,6 +1,21 @@
 Yii Framework 2 mongodb extension Change Log
 ============================================
 
+3.0.1 May 22, 2023
+------------------
+
+- Bug #356 Fixed error "implicit conversion from float" in debug panel (squio)
+
+
+3.0.0 September 04, 2022
+------------------------
+
+- Bug #297: Fixed zero-index key problem in `ActiveQuery::Each()` (ziaratban)
+- Bug #299: Drop limit of `batchSize` cursor option in application level according to [jira.mongodb(PHP-457)](https://jira.mongodb.org/browse/PHP-457) (ziaratban)
+- Bug #348: Add PHP 8.1 support (scrummitch, samdark)
+- Enh #294: Add transactions support (ziaratban)
+
+
 2.1.12 August 09, 2021
 ----------------------
 
@@ -18,6 +33,7 @@ Yii Framework 2 mongodb extension Change Log
 
 - Bug #308: Fix `yii\mongodb\file\Upload::addFile()` error when uploading file with readonly permissions (sparchatus)
 - Enh #319: Added support for the 'session.use_strict_mode' ini directive in `yii\web\Session` (rhertogh)
+
 
 
 2.1.9 November 19, 2019

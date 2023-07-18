@@ -5,6 +5,7 @@
 use app\models\Expenses;
 use app\models\Limit;
 use yii\helpers\Html;
+use yii\web\NotFoundHttpException;
 
 $this->title = 'Limit';
 ?>
@@ -72,13 +73,13 @@ $this->title = 'Limit';
                                 <?= Html::a('<i class="fa-solid fa-house" style="color:#0B0B45; font-size: 1.4em; "></i>', ['/site/overview']); ?>
                             </th>
                             <th>
-                                <?= Html::a('<i class="fa-regular fa-calendar" style="color:#0B0B45; font-size: 1.4em;"></i>', ['/site/calendar']); ?>
+                                <?= Html::a('<i class="fa-regular fa-calendar" style="color:red; font-size: 2em;"></i>', ['/site/calendar']); ?>
                             </th>
                             <th>
-                                <?= Html::a('<i class="fa-solid fa-money-check" style="color:#0B0B45; font-size: 1.4em;"></i>', ['/site/limit']); ?>
+                                <?= Html::a('<i class="fa-solid fa-money-check" style="color:blue; font-size: 2em;"></i>', ['/site/limit']); ?>
                             </th>
                             <th>
-                                <?= Html::a('<i class="fa-solid fa-chart-simple" style="color:#0B0B45; font-size: 1.4em;"></i>', ['/site/bar']); ?>
+                                <?= Html::a('<i class="fa-solid fa-chart-simple" style="color:orange; font-size: 2em;"></i>', ['/site/bar']); ?>
                             </th>
                         </tr>
                         <tr>
@@ -93,6 +94,12 @@ $this->title = 'Limit';
         </div>
         <center>
         <?php 
+
+            // $model = Limit::findOne(['_id' => isset($_id) ? $_id : null]);
+            // if ($model === null) {
+            //     throw new NotFoundHttpException('The requested page does not exist.');
+            // }
+
             $total_expense = 0;
             $expense = Expenses::find()->where(["create_by"=>(String)Yii::$app->user->identity->id])->all();
             $exlist = [];
@@ -104,10 +111,13 @@ $this->title = 'Limit';
             $total_expense = array_sum($exlist);
 
             $lilist = 0;
+            $_id = 0;
             $limit = Limit::find()->where(["create_by"=>(String)Yii::$app->user->identity->id])->all();
             foreach ($limit as $l) {
                 $lilist = $l->amount;
+                $_id = $l->_id;
             }
+             
 
         ?>
             <div class="card" style="width: 100%; ">
@@ -143,6 +153,12 @@ $this->title = 'Limit';
 
                 </div>
             </div>
+            <?php 
+                if ($_id !== 0 && $_id !== null) {
+                    echo Html::a('Edit', ['/site/update-limit', '_id' => (string)$_id], ['class' => 'btn btn-primary rounded-pill shadow-lg']);
+                    echo Html::a('Delete', ['/site/delete-limit', '_id' => (string)$_id], ['class' => 'btn btn-danger rounded-pill shadow-lg']); 
+                }
+            ?>
         </center>
     </div>
 </body>

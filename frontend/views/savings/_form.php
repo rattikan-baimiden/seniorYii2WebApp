@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Savings */
@@ -29,8 +30,10 @@ use yii\widgets\ActiveForm;
 
 </style>
 
-<body style="background-image: url('https://minzel.io/svg/logout_background_blue_spot_1.svg');background-size: cover;background-position: center;">
+<body style="background-color: #41DBC6;background-size: cover;background-position: center;">
     <div class="">
+        
+
         <div class="site-signup">
             <div class="card o-hidden border-0 my-5 shadow typeBlock">
                 <div class="">
@@ -39,45 +42,86 @@ use yii\widgets\ActiveForm;
                         <div class="col-lg-5"></div>
                         <div class="col-lg-7">
                             <div class="p-5">
-                                <img src="https://cdn-icons-png.flaticon.com/512/3347/3347971.png" class="rounded mx-auto d-block" alt="..." width="100px">
-                                <br/>
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Add Saving</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Add Saving</h1>
                                 </div>
-                                <?php $form = ActiveForm::begin([
+                                <div class="row d-flex align-items-center justify-content-between">
+                                    <div class="col-auto">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/344/344464.png" width="50px">
+                                    </div>
+                                    <div class="col">
+                                    <br/>
+                                    <?php $form = ActiveForm::begin([
                                     'id' => 'form-signup',
                                     'options' => ['class' => 'user']
-                                ]); ?>
+                                    ]); ?>
                                     <?= $form->field($model, 'amount', [
                                         'inputOptions' => [
-                                            'class' => 'form-control form-control-user',
+                                            'class' => 'form-control form-control-user rounded-pill',
                                         ]
                                     ])->textInput(['autofocus' => true]) ?>
-
-                                    <?= $form->field($model, 'start_date', [
-                                        'inputOptions' => [
-                                            'class' => 'form-control form-control-user',
-                                            // 'placeholder' => 'yyyy-mm-dd'
-                                        ]
-                                    ])->hiddenInput()->label(false); ?>
-
-                                    <?= $form->field($model, 'end_date', [
-                                        'inputOptions' => [
-                                            'class' => 'form-control form-control-user',
-                                            // 'placeholder' => 'yyyy-mm-dd'
-                                        ]
-                                    ])->hiddenInput()->label(false); ?>
-                                    
-
-                                    <?= $form->field($model, 'user_id')->hiddenInput(['value'=> Yii::$app->user->identity->id])->label(false) ?>
-
-                                    <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-user btn-block']) ?>
-                                <?php ActiveForm::end() ?>
+                                    <span>THB</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="card o-hidden border-0 my-5 shadow typeBlock">
+                <div class="">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-5"></div>
+                        <div class="col-lg-7">
+                            <div class="p-5">
+                                <div class="row d-flex align-items-center justify-content-between">
+                                    <div class="col-auto">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/3094/3094766.png" width="50px">
+                                    </div>
+                                    <div class="col">
+                                        <?= $form->field($model, 'start_date')->widget(
+                                                DatePicker::className(), [
+                                                    'options' => ['class' => 'form-control rounded-pill'],
+                                                    'clientOptions' => [
+                                                        'autoclose' => true,
+                                                        'format' => 'yyyy MM dd',
+                                                        'todayBtn' => true,
+                                                        'todayHighlight' => true,
+                                                        'showClear' => true,
+                                                        'clearBtn' => true,
+                                                        'language' => 'en', 
+                                                    ],
+                                                    
+                                                ]
+                                        ); ?>
+
+                                        <?= $form->field($model, 'end_date')->widget(
+                                                DatePicker::className(), [
+                                                    'options' => ['class' => 'form-control rounded-pill'],
+                                                    'clientOptions' => [
+                                                        'autoclose' => true,
+                                                        'format' => 'yyyy MM dd',
+                                                        'todayBtn' => true,
+                                                        'todayHighlight' => true,
+                                                        'showClear' => true,
+                                                        'clearBtn' => true,
+                                                        'language' => 'en', 
+                                                    ],
+                                                    
+                                                ]
+                                        ); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?= $form->field($model, 'user_id')->hiddenInput(['value'=> Yii::$app->user->identity->id])->label(false) ?>
+            <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-user btn-block rounded-pill shadow-lg']) ?>
+            <?php ActiveForm::end() ?>                                   
         </div>
     </div>
 </body>

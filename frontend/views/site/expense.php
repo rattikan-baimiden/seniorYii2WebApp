@@ -7,6 +7,8 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\ActiveForm;
+use app\models\Expenses;
+use app\controllers\ExpensesController;
 
 $this->title = 'expense';
 ?>
@@ -55,6 +57,9 @@ $this->title = 'expense';
         .font {
             font-size: 14px;
         }
+        .table-headerless thead {
+            display: none;
+        }
     </style>
     <script src="https://kit.fontawesome.com/c3c7a2a31a.js" crossorigin="anonymous"></script>
 
@@ -102,12 +107,7 @@ $this->title = 'expense';
                     <?= Html::a('<i class="fa fa-chevron-left"></i>', ['/site/overview']); ?>
                 </div>
                 <h4 class="card-title"><b>Expense List</b></h4>
-                    <tr>
-                        <th></th>
-                        <th style="text-align: right;">
-                        <?= Html::a('<i style="font-size:24px;color:Orange;" class="fas">&#xf044;</i>', ['expenses/index']); ?>
-                        </th>
-                    </tr>
+                    
                 <?= GridView::widget([
                     'dataProvider' => $expenseModel,
                     'columns' => [
@@ -125,8 +125,42 @@ $this->title = 'expense';
                             'format' => 'raw',
                             'headerOptions' => ['class' => 'text-center'],
                             'contentOptions' => ['class' => 'text-center'],
-                        ]
+                        ],
+                        [
+                            'class' => ActionColumn::className(),
+                            'urlCreator' => function ($action, \app\models\Expenses $model, $key, $index, $column) {
+                                if ($action === 'update') {
+                                    return Url::toRoute(['site/update-expense', '_id' => (string) $model->_id]);
+                                }
+                                return Url::toRoute([$action, '_id' => (string) $model->_id]);
+                            },
+                            'visibleButtons' => [
+                                'view' => false,
+                            ],
+                            'contentOptions' => ['class' => 'text-right'],
+                            'buttons' => [
+                                'update' => function ($url, $model, $key) {
+                                    return Html::a('<i class="fas fa-pencil-alt fa-xs"></i>', $url, [
+                                        'class' => 'btn btn-primary rounded-pill shadow-lg',
+                                        'title' => 'Edit',
+                                    ]);
+                                },
+                                'delete' => function ($url, $model, $key) {
+                                    $deleteUrl = Url::toRoute(['site/delete-expense fa-xs', '_id' => (string) $model->_id]);
+                                    return Html::a('<i class="fas fa-trash-alt"></i>', $deleteUrl, [
+                                        'class' => 'btn btn-danger rounded-pill shadow-lg',
+                                        'title' => 'Delete',
+                                        'data-confirm' => 'Are you sure you want to delete this item?',
+                                        'data-method' => 'post',
+                                    ]);
+                                },
+                            ],
+                        ], 
                     ],
+                    'summary' => '',
+                    'options' => ['class' => 'table table-bordered table-borderless'], // เพิ่มคลาส 'table-bordered' เพื่อให้แสดงเส้นกรอบ
+                    'tableOptions' => ['class' => 'table table-bordered table-headerless table-borderless'], // เพิ่มคลาส 'table-bordered' เพื่อให้แสดงเส้นกรอบ
+                    
                 ]); ?>
                 <div class="cartTotal" style="width: 100%; background-color:#0B0B45; color:#ececec; margin-top:10px;">
                 </div>

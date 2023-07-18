@@ -4,9 +4,12 @@ use app\models\Expenses;
 /** @var yii\web\View $this */
 
 use app\models\Incomes;
+use app\models\Typesexpense;
 use phpDocumentor\Reflection\Types\String_;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\grid\GridView;
+use yii\helpers\Url;
 
 $this->title = 'Overview';
 ?>
@@ -68,9 +71,9 @@ $this->title = 'Overview';
 <?php $form = ActiveForm::begin(); ?>
 
 <body style="background-color: #f8f9fa; font-size: 14px;">
-    <div class="card" style="width: 100%; margin-top:2px;background-size: cover; background-image: url('https://cdn.pixabay.com/photo/2015/11/10/08/31/banner-1036483_1280.jpg');">
+    <div class="card" style="width: 100%; margin-top:2px;background-size: cover; background-image: url('https://img.freepik.com/free-vector/gradient-background-green-tones_23-2148395299.jpg');">
         <div class="containerB">
-            <div style="font-size: 14px; margin-right: 20px; margin-top: 15px; color: #ececec; ">
+            <div style="font-size: 14px; margin-right: 20px; margin-top: 15px; color:#2F4F4F; ">
                 <table style="width:100%; margin-bottom:20px;">
                     <tr>
                         <td>
@@ -80,10 +83,17 @@ $this->title = 'Overview';
                         </td>
                         <th></th>
                         <th style="text-align: right;">
-                            <?= Html::a('<i class="fa-solid fa-circle-plus" style="color:white; font-size: 1.4em;" data-toggle="modal" data-target="#exampleModalCenter"></i>'); ?>
+                            <?= Html::a('<i class="fa-solid fa-plus" style="color:white; font-size: 1em;" data-toggle="modal" data-target="#exampleModalCenter"></i>'); ?>
+                            <?= Html::a('<i class="fa-solid fa-th-list" style="color:white; font-size: 1.4em;" data-toggle="modal" data-target="#exampleModalCenter"></i>'); ?>
+                            
+                        </th>
+                        <th>
+                            
                         </th>
                     </tr>
+                    
                 </table>
+                
                 <p>Balance</p>
                 <h4><b> 
                     <?php 
@@ -104,13 +114,12 @@ $this->title = 'Overview';
                             $type_e[] = $e->expense_type;
                         }
                         $total_expense = array_sum($exlist);
-
                         echo (int)$total_income-(int)$total_expense;
                     ?>
                 </b></h4>
                 <table style="width:110%">
                     <tr>
-                        <td>Amount Income (baht)</td>
+                        <td>Amount Income (baht) </td>
                         <th></th>
                         <th>
                             <?php
@@ -127,7 +136,25 @@ $this->title = 'Overview';
                             ?>
                         </th>
                     </tr>
+                    <tr style="text-align: center;margin-top: 20px;"> 
+                        
+                    </tr>
                 </table>
+                <div >
+                    <table style="width:110%">
+                        <tr>
+                            <td>
+                                <?= Html::a('<i class="fa-solid fa-plus" style="color:white; font-size: 1em; margin-top: 10px;"></i>', ['expenses/create']); ?>
+                                <?= Html::a('<i class="fa-solid fa-duotone fa-money-bill-trend-up" style="color: white;font-size: 2em; margin-top: 10px;"></i>', ['expenses/create']); ?>
+                            </td>
+                            <td>__________</td>
+                            <td style="text-align: center;">
+                                <?= Html::a('<i class="fa-solid fa-plus" style="color:white; font-size: 1em;text-align: left; margin-top: 10px;"></i>', ['incomes/create']); ?>
+                                <?= Html::a('<i class="fa-solid fa-regular fa-sack-dollar" style="color: white;font-size: 2em;text-align: left; margin-top: 10px;"></i>', ['incomes/create']); ?>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -138,20 +165,21 @@ $this->title = 'Overview';
                 <table style="border:1; width:80%; text-align:center;">
                     <tr>
                         <th>
-                            <?= Html::a('<i class="fa-solid fa-house" style="color:#0B0B45; font-size: 1.4em; "></i>', ['/site/overview']); ?>
+                            <?= Html::a('<i class="fas fa-plus" style="margin-top:10px;color: #41DBC6;font-size: 15px;"></i>', ['site/pocket']); ?>
+                            <?= Html::a('<i class="fa-solid fa-wallet" style="color:#41DBC6; font-size: 2em; "></i>', ['/site/pocket']); ?>
                         </th>
                         <th>
-                            <?= Html::a('<i class="fa-regular fa-calendar" style="color:#0B0B45; font-size: 1.4em;"></i>', ['/site/calendar']); ?>
+                            <?= Html::a('<i class="fa-regular fa-calendar" style="color:red; font-size: 2em;"></i>', ['/site/calendar']); ?>
                         </th>
                         <th>
-                            <?= Html::a('<i class="fa-solid fa-money-check" style="color:#0B0B45; font-size: 1.4em;"></i>', ['/site/limit']); ?>
+                            <?= Html::a('<i class="fa-solid fa-money-check" style="color:blue; font-size: 2em;"></i>', ['/site/limit']); ?>
                         </th>
                         <th>
-                            <?= Html::a('<i class="fa-solid fa-chart-simple" style="color:#0B0B45; font-size: 1.4em;"></i>', ['/site/bar']); ?>
+                            <?= Html::a('<i class="fa-solid fa-chart-simple" style="color:orange; font-size: 2em;"></i>', ['/site/bar']); ?>
                         </th>
                     </tr>
                     <tr>
-                        <td>Overview</td>
+                        <td>Pocket</td>
                         <td>Calendar</td>
                         <td>Limits</td>
                         <td>Analyze</td>
@@ -161,6 +189,49 @@ $this->title = 'Overview';
         </div>
     </div>
 
+    <p style="margin-right: 100px;"><b>Your Pocket</b></p>
+    <div class=" card" style="width: 100%; margin-top:7px;height: 100px;">
+        <div class="container">
+            <?php 
+                // Filter the rows with non-null ratio
+                $typesexpenseModel->query->andFilterWhere(['IS NOT', 'ratio', null]);
+
+                echo GridView::widget([
+                    'dataProvider' => $typesexpenseModel,
+                    'columns' => [
+                        [
+                            'attribute' => 'type_name',
+                            'format' => 'raw',
+                            'contentOptions' => ['class' => ''],
+                            'value' => function ($model) {
+                                return $model->ratio !== null ? implode(",", (array)$model->type_name) : '';
+                            },
+                        ],
+                        [
+                            'attribute' => 'ratio',
+                            'format' => 'raw',
+                            'value' => function ($model) {
+                                return $model->ratio !== null ? $model->ratio : '';
+                            },
+                        ],
+                    ],
+                    'summary' => '',
+                    'options' => [
+                        'class' => 'table table-bordered table-borderless',
+                        'style' => 'border: none;', // เพิ่มสไตล์ CSS เพื่อลบเส้นขอบ
+                    ],
+                    'tableOptions' => [
+                        'class' => 'table table-bordered table-borderless',
+                        'style' => 'border: none;', // เพิ่มสไตล์ CSS เพื่อลบเส้นขอบ
+                    ],
+                    'showHeader' => false, // เพิ่มตัวเลือก showHeader เป็น false เพื่อเอาหัวข้อตารางออก
+                ]);
+            ?>
+            <br>
+        </div>
+    </div>
+    
+    
     <h4 style="margin-right: 220px;"><b>Recently</b></h4>
     <div class=" card" style="width: 100%; margin-top:7px;">
         <div class="container">
@@ -179,10 +250,12 @@ $this->title = 'Overview';
                     <th></th>
                     <th style=" text-align: right;"><?php echo implode("<br>", (array)$exlist) ?></th>
                 </tr>
+                
             </table>
             <br>
         </div>
     </div>
+    
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -196,8 +269,6 @@ $this->title = 'Overview';
                 </div>
                 <div class="modal-body">
                     <div style="margin-top: 15px; margin-bottom:17px;">
-                        <?= Html::a('Add Expenses', ['expenses/create'], ['class' => 'btn btn-outline-info border font', 'style' => 'color:black; width:100%; margin-bottom:10px;']); ?><br>
-                        <?= Html::a('Add Incomes', ['incomes/create'], ['class' => 'btn btn-light border font', 'style' => 'color:black; width:100%; margin-bottom:10px;']); ?><br>
                         <?= Html::a('Add Savings', ['savings/create'], ['class' => 'btn btn-light border font', 'style' => 'color:black; width:100%; margin-bottom:10px;']); ?><br>
                         <?= Html::a('Add Limit', ['limit/create'], ['class' => 'btn btn-light border font', 'style' => 'color:black; width:100%; margin-bottom:10px;']); ?>
                     </div>

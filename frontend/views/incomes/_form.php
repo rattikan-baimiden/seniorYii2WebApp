@@ -5,6 +5,7 @@ use app\models\Types;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Incomes */
@@ -32,9 +33,10 @@ use yii\widgets\ActiveForm;
 
 </style>
 
-<body style="background-image: url('https://minzel.io/svg/logout_background_blue_spot_1.svg');background-size: cover;background-position: center;">
+<body style="background-color: #41DBC6;background-size: cover;background-position: center;">
     <div class="">
         <div class="site-signup">
+
             <div class="card o-hidden border-0 my-5 shadow typeBlock">
                 <div class="">
                     <!-- Nested Row within Card Body -->
@@ -42,49 +44,101 @@ use yii\widgets\ActiveForm;
                         <div class="col-lg-5"></div>
                         <div class="col-lg-7">
                             <div class="p-5">
-                                <img src="https://cdn-icons-png.flaticon.com/512/5834/5834794.png" class="rounded mx-auto d-block" alt="..." width="100px">
-                                <br/>
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Add Income</h1>
                                 </div>
-                                <?php $form = ActiveForm::begin([
+                                </br>
+                                <div class="row d-flex align-items-center justify-content-between">
+                                    <div class="col-auto">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/5778/5778825.png" width="50px">
+                                    </div>
+                                    <div class="col">
+                                    <?php $form = ActiveForm::begin([
                                     'id' => 'form-signup',
                                     'options' => ['class' => 'user']
-                                ]); ?>
+                                    ]); ?>
                                     <?php  $income_type = ArrayHelper::map(Typeincome::find()->all(), 'type_name','type_name'); ?>
                                     <?= $form->field($model, 'income_type', [
                                         'inputOptions' => [
-                                            'class' => 'form-control btn btn-light dropdown-toggle typeBlock',
+                                            'class' => 'form-control btn btn-light dropdown-toggle typeBlock rounded-pill',
                                         ]
                                     ])->dropDownList($income_type,['prompt'=>'Select Types',]) ?>
-                                    <?= $form->field($model, 'amount', [
-                                        'inputOptions' => [
-                                            'class' => 'form-control form-control-user',
-                                        ]
-                                    ])->textInput(['autofocus' => true]) ?>
-
-                                    <?= $form->field($model, 'create_date', [
-                                        'inputOptions' => [
-                                            'class' => 'form-control form-control-user',
-                                        ]
-                                    ])->hiddenInput(['autofocus' => true])->label(false) ?>
-
-                                    <?= $form->field($model, 'update_date', [
-                                        'inputOptions' => [
-                                            'class' => 'form-control form-control-user',
-                                        ]
-                                    ])->hiddenInput(['autofocus' => true])->label(false) ?>
-
-                                    <?= $form->field($model, 'create_by')->hiddenInput(['value'=> Yii::$app->user->identity->id])->label(false) ?>
-                                    <?= $form->field($model, 'update_by')->hiddenInput(['value'=> Yii::$app->user->identity->id])->label(false) ?>
-
-                                    <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-user btn-block']) ?>
-                                <?php ActiveForm::end() ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="card o-hidden border-0 my-5 shadow typeBlock">
+                <div class="">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-5"></div>
+                        <div class="col-lg-7">
+                            <div class="p-5">
+                                <div class="row d-flex align-items-center justify-content-between">
+                                    <div class="col-auto">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/2189/2189503.png" width="50px">
+                                    </div>
+                                    <div class="col">
+                                    <?= $form->field($model, 'amount', [
+                                        'inputOptions' => [
+                                            'class' => 'form-control form-control-user rounded-pill',
+                                        ]
+                                    ])->textInput(['autofocus' => true]) ?>
+                                    <span>THB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card o-hidden border-0 my-5 shadow typeBlock">
+                <div class="">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-5"></div>
+                        <div class="col-lg-7">
+                            <div class="p-5">
+                                <div class="row d-flex align-items-center justify-content-between">
+                                    <div class="col-auto">
+                                        <img src="https://cdn-icons-png.flaticon.com/128/6853/6853146.png" width="50px">
+                                    </div>
+                                    <div class="col">
+                                        <?= $form->field($model, 'create_date')->widget(
+                                                DatePicker::className(), [
+                                                    'options' => ['class' => 'form-control rounded-pill'],
+                                                    'clientOptions' => [
+                                                        'autoclose' => true,
+                                                        'format' => 'yyyy MM dd',
+                                                        'todayBtn' => true,
+                                                        'todayHighlight' => true,
+                                                        'showClear' => true,
+                                                        'clearBtn' => true,
+                                                        'language' => 'en', 
+                                                    ],
+                                                    
+                                                ]
+                                        ); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?= $form->field($model, 'create_by')->hiddenInput(['value'=> Yii::$app->user->identity->id])->label(false) ?>
+            <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-user btn-block rounded-pill shadow-lg']) ?>
+            <?php ActiveForm::end() ?>                        
+                                    
+                                    
+                                    
+                                
+                            
         </div>
     </div>
 </body>

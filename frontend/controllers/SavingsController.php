@@ -71,9 +71,20 @@ class SavingsController extends Controller
         $model = new Savings();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                Yii::$app->session->setFlash('success', 'Saving Added');
-                return $this->redirect(['site/overview']);
+            if ($model->load($this->request->post())) {
+                
+                if(empty($model->start_date)){
+                    $model->start_date = time();
+                    // $model->start_date = Yii::$app->formatter->asDate($model->start_date, 'yyyy MM dd');
+                }
+                if(empty($model->end_date)){
+                    $model->start_date = time();
+                    // $model->create_date = Yii::$app->formatter->asDate($model->create_date, 'yyyy-MM-dd');
+                }
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('success', 'Saving Added');
+                    return $this->redirect(['site/overview']);
+                }
             }
         } 
 

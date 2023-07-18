@@ -75,11 +75,7 @@ class LimitController extends Controller
                 
                 if(empty($model->create_date)){
                     $model->create_date = time();
-                    $model->create_date = Yii::$app->formatter->asDate($model->create_date, 'yyyy-MM-dd');
-                }
-                if(empty($model->update_date)){
-                    $model->update_date = time();
-                    $model->update_date = Yii::$app->formatter->asDate($model->update_date, 'yyyy-MM-dd');
+                    // $model->create_date = Yii::$app->formatter->asDate($model->create_date, 'yyyy-MM-dd');
                 }
                 if ($model->save()) {
                     Yii::$app->session->setFlash('success', 'Limit Added');
@@ -106,10 +102,6 @@ class LimitController extends Controller
 
         if ($this->request->isPost && $model->load($this->request->post())) {
             
-            if(empty($model->update_date)){
-                $model->update_date = time();
-                $model->update_date = Yii::$app->formatter->asDate($model->update_date, 'yyyy-MM-dd');
-            }
             if ($model->save()) {
                 return $this->redirect(['view', '_id' => (string) $model->_id]);
             }

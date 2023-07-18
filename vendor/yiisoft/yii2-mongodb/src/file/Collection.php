@@ -1,8 +1,8 @@
 <?php
 /**
- * @link http://www.yiiframework.com/
+ * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @license https://www.yiiframework.com/license/
  */
 
 namespace yii\mongodb\file;
@@ -19,8 +19,8 @@ use yii\web\UploadedFile;
  *
  * File collection inherits all interface from regular [[\yii\mongo\Collection]], adding methods to store files.
  *
- * @property \yii\mongodb\Collection $chunkCollection Mongo collection instance. This property is read-only.
- * @property \yii\mongodb\Collection $fileCollection Mongo collection instance. This property is read-only.
+ * @property-read \yii\mongodb\Collection $chunkCollection Mongo collection instance.
+ * @property-read \yii\mongodb\Collection $fileCollection Mongo collection instance.
  * @property string $prefix Prefix of this file collection.
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
@@ -128,31 +128,30 @@ class Collection extends \yii\mongodb\Collection
                 'name' => $this->name
             ]);
         }
-
         return $this->_fileCollection;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function drop()
+    public function drop($execOptions = [])
     {
-        return parent::drop() && $this->database->dropCollection($this->getChunkCollection()->name);
+        return parent::drop($execOptions) && $this->database->dropCollection($this->getChunkCollection()->name,$execOptions);
     }
 
     /**
      * {@inheritdoc}
      * @return Cursor cursor for the search results
      */
-    public function find($condition = [], $fields = [], $options = [])
+    public function find($condition = [], $fields = [], $options = [], $execOptions = [])
     {
-        return new Cursor($this, parent::find($condition, $fields, $options));
+        return new Cursor($this, parent::find($condition, $fields, $options, $execOptions));
     }
 
     /**
      * {@inheritdoc}
      */
-    public function remove($condition = [], $options = [])
+    public function remove($condition = [], $options = [], $execOptions = [])
     {
         $fileCollection = $this->getFileCollection();
         $chunkCollection = $this->getChunkCollection();
@@ -166,7 +165,7 @@ class Collection extends \yii\mongodb\Collection
 
         $batchSize = 200;
         $options['batchSize'] = $batchSize;
-        $cursor = $fileCollection->find($condition, ['_id'], $options);
+        $cursor = $fileCollection->find($condition, ['_id'], $options, $execOptions);
         unset($options['limit']);
         $deleteCount = 0;
         $deleteCallback = function ($ids) use ($fileCollection, $chunkCollection, $options) {

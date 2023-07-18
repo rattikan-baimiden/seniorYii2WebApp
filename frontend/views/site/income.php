@@ -7,10 +7,6 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\ActiveForm;
-<<<<<<< HEAD
-=======
-
->>>>>>> f426451c9d872e8a6627e986c487ff1659763e07
 
 $this->title = 'Income';
 ?>
@@ -100,37 +96,15 @@ $this->title = 'Income';
             <?= Html::a('Expense', ['/site/expense'], ['class' => 'btn btn-light border font']); ?>
         </div>
     <br>
-<<<<<<< HEAD
-=======
-
-    <?= GridView::widget([
-                'dataProvider' => $incomeModel,
-                'columns' => [
-                    [
-                        'attribute' => 'Date selected:',
-                        'format' => 'raw',
-                        'value' => function ($model) {
-                            return implode(",", (array)$model->create_date);
-                        },
-                    ]
-                ],
-    ]); ?>
-
->>>>>>> f426451c9d872e8a6627e986c487ff1659763e07
     <div class="card" style="width: 100%; ">
         <div class="container">
             <div style="margin-right: 300px; margin-top: 10px;">
                 <?= Html::a('<i class="fa fa-chevron-left"></i>', ['/site/overview']); ?>
             </div>
             <h4 class="card-title" style="text-align:center;"><b>Income List</b></h4>
-                <tr>
-                    <th></th>
-                    <th style="text-align: right;">
-                    <?= Html::a('<i style="font-size:24px;color:Orange;" class="fas">&#xf044;</i>', ['incomes/index']); ?>
-                    </th>
-                </tr>
             <?= GridView::widget([
                 'dataProvider' => $incomeModel,
+                'showHeader' => false,
                 'columns' => [
                     [
                         'attribute' => 'income_type',
@@ -141,21 +115,45 @@ $this->title = 'Income';
                         },
                     ],
                     [
-<<<<<<< HEAD
-=======
-                        'attribute' => 'income_type',
-                        'format' => 'raw',
-                        'headerOptions' => ['class' => 'text-left'],
-                        'contentOptions' => ['class' => 'text-left'],
-                    ],
-                    [
->>>>>>> f426451c9d872e8a6627e986c487ff1659763e07
                         'attribute' => 'amount',
                         'format' => 'raw',
                         'headerOptions' => ['class' => 'text-center'],
                         'contentOptions' => ['class' => 'text-center'],
-                    ]
+                    ],
+                    [
+                        'class' => ActionColumn::className(),
+                        'urlCreator' => function ($action, \app\models\Incomes $model, $key, $index, $column) {
+                            if ($action === 'update') {
+                                    return Url::toRoute(['site/update-income', '_id' => (string) $model->_id]);
+                                }
+                            return Url::toRoute([$action, '_id' => (string) $model->_id]);
+                         },
+                         'visibleButtons' => [
+                            'view' => false,
+                         ],
+                         'contentOptions' => ['class' => 'text-right'],
+                         'buttons' => [
+                            'update' => function ($url, $model, $key) {
+                                return Html::a('<i class="fas fa-pencil-alt fa-xs"></i>', $url, [
+                                    'class' => 'btn btn-primary rounded-pill shadow-lg',
+                                    'title' => 'Edit',
+                                ]);
+                            },
+                            'delete' => function ($url, $model, $key) {
+                                $deleteUrl = Url::toRoute(['site/delete-income', '_id' => (string) $model->_id]);
+                                return Html::a('<i class="fas fa-trash-alt"></i>', $deleteUrl, [
+                                    'class' => 'btn btn-danger rounded-pill shadow-lg',
+                                    'title' => 'Delete',
+                                    'data-confirm' => 'Are you sure you want to delete this item?',
+                                    'data-method' => 'post',
+                                ]);
+                            },
+                        ],
+                    ], 
                 ],
+                'summary' => '',
+                'options' => ['class' => 'table table-bordered table-borderless'], // เพิ่มคลาส 'table-bordered' เพื่อให้แสดงเส้นกรอบ
+                'tableOptions' => ['class' => 'table table-bordered table-headerless table-borderless'], // เพิ่มคลาส 'table-bordered' เพื่อให้แสดงเส้นกรอบ
             ]); ?>
             <div class="cartTotal" style="width: 100%; background-color:#0B0B45; color:#ececec; margin-top:10px;">
                 
